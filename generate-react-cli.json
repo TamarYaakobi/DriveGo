@@ -1,0 +1,17 @@
+{
+  "usesTypeScript": true,
+  "usesStyledComponents": false,
+  "testLibrary": "Vitest",
+  "component": {
+    "default": {
+      "path": "src/components",
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false,
+      "styleExtension": "scss"
+    }
+  },
+  "usesCssModule": false,
+  "cssPreprocessor": "scss"
+}
