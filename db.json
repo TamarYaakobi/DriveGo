@@ -107,6 +107,15 @@
       "password": "סיסמהתמר",
       "isAdmin": false,
       "id": "XMBkUOcC19I"
+    },
+    {
+      "firstName": "אפרת ",
+      "lastName": "כהן",
+      "idNumber": "222222222",
+      "email": "efrat@gmail.com",
+      "password": "efrat@gmail.com",
+      "isAdmin": false,
+      "id": "U4mhS-C4xV0"
     }
   ],
   "categories": [

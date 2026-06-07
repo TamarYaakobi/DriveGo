@@ -4,13 +4,17 @@ import { useFormik } from 'formik';
 import * as yup from 'yup'
 import UserService from '../../services/singIn.service';
 import { useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../redux/slices/user.slice';
+import { setMessage } from '../../redux/slices/massage.slice';
 
 interface SingInProps { }
 
 const SingIn: FC<SingInProps> = () => {
 
   const [singUp, setSingUp] = useState(false)
-  const navigate=useNavigate()
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const myForm = useFormik({
     initialValues: {
       email: '',
@@ -19,11 +23,22 @@ const SingIn: FC<SingInProps> = () => {
     onSubmit: async (value: any) => {
       let user = await UserService.getUserByEmail(value.email)
       if (user != null) {
-        if (user.password == value.password) { }
+        if (user.password == value.password) {
+          dispatch(setUser(user))
+          navigate('/')
+        }
         else {
+          dispatch(setMessage({
+            massage: 'הסיסמה שגויה',
+            type: 'error'
+          }))
         }
       }
       else {
+        dispatch(setMessage({
+          massage: 'המשתמש אינו קיים במערכת, נא הרשם',
+          type: 'error'
+        }))
         setSingUp(true)
       }
     },
@@ -49,8 +64,7 @@ const SingIn: FC<SingInProps> = () => {
     </form>
     {singUp &&
       <>
-        <small>המשתמש אינו קיים במערכת נא בצע הרשמה</small>
-        <button onClick={()=>navigate('/SingUp')}>עבור להרשמה</button>
+        <button onClick={() => navigate('/SingUp')}>עבור להרשמה</button>
       </>}
   </div>
 

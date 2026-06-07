@@ -1,10 +1,13 @@
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import './SingUp.scss';
 import UserService from '../../services/singIn.service';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup'
 import type { User } from "../../models/user.model"
+import { setUser } from '../../redux/slices/user.slice';
+import { useDispatch } from 'react-redux';
+import { setMessage } from '../../redux/slices/massage.slice';
 
 
 interface SingUpProps { }
@@ -12,6 +15,7 @@ interface SingUpProps { }
 const SingUp: FC<SingUpProps> = () => {
 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   const myForm = useFormik({
     initialValues: {
       firstName: '',
@@ -34,10 +38,18 @@ const SingUp: FC<SingUpProps> = () => {
 
       let user = await UserService.addUser(userModel)
       if (user == null) {
-        return ' המשתמש כבר רשום במערכת'
+        dispatch(setMessage({
+          massage: ' המשתמש כבר רשום במערכת',
+          type: 'error'
+        }))
       }
       else {
-
+        dispatch(setUser(user))
+        dispatch(setMessage({
+          massage: 'נרשם בהצלחה',
+          type: 'sucsses'
+        }))
+        navigate('/')
       }
     },
     validationSchema: yup.object().shape({
@@ -58,13 +70,13 @@ const SingUp: FC<SingUpProps> = () => {
         .min(8, 'הסיסמה חייבת להכיל לפחות 8 תווים')
         .required('שדה חובה'),
       adminPassword: yup.string().when('isAdmin', {
-        is: true, 
+        is: true,
         then: (schema) => schema
           .required('שדה חובה עבור מנהל')
           .test('check-admin-password', 'סיסמת מנהל שגויה', (value) => {
             return value === import.meta.env.VITE_ADMIN_PASSWORD;
           }),
-        otherwise: (schema) => schema.notRequired() 
+        otherwise: (schema) => schema.notRequired()
       })
     })
   })
