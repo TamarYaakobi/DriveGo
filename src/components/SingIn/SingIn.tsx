@@ -2,7 +2,7 @@ import { useState, type FC } from 'react';
 import './SingIn.scss';
 import { useFormik } from 'formik';
 import * as yup from 'yup'
-import UserService from '../../services/singIn.service';
+import UserService from '../../services/user.service';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../redux/slices/user.slice';

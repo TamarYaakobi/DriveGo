@@ -2,9 +2,11 @@ import axios from "axios"
 import type { User } from "../models/user.model"
 
 export default new class UserService {
+    private readonly BASE_URL = import.meta.env.VITE_API_URL;
+
     async getUserByEmail(email: string): Promise<User | null> {
         try {
-            const response = await axios.get<User[]>(`http://localhost:3000/users?email=${email}`)
+            const response = await axios.get<User[]>(`${this.BASE_URL}/users?email=${email}`)
             return response.data[0] || null
         }
         catch (error) {
@@ -18,7 +20,7 @@ export default new class UserService {
             if (existingUser != null) {
                 return null
             }
-            const response = await axios.post<User>(`http://localhost:3000/users`, user)
+            const response = await axios.post<User>(`${this.BASE_URL}/users`, user)
             return response.data
         } catch (error) {
             return null

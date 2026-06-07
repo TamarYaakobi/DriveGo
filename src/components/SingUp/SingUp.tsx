@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import './SingUp.scss';
-import UserService from '../../services/singIn.service';
+import UserService from '../../services/user.service';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup'

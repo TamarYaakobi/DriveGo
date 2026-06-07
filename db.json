@@ -182,7 +182,7 @@
       "name": "Chevrolet"
     }
   ],
-  "products": [
+  "cars": [
     {
       "id": "1",
       "categoryId": 3,
