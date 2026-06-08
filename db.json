@@ -574,140 +574,140 @@
   "reviews": [
     {
       "id": "1",
-      "productId": 1,
+      "carId": 1,
       "userId": 1,
       "description": "רכב מדהים, נסיעה שקטה ומפוארת. שירות מעולה ונוחות מירבית.",
       "rating": 5
     },
     {
       "id": "2",
-      "productId": 1,
+      "carId": 1,
       "userId": 3,
       "description": "חוויה יוקרתית אמיתית. הסלון מרשים ואיכות הנהיגה ברמה גבוהה מאוד.",
       "rating": 5
     },
     {
       "id": "3",
-      "productId": 2,
+      "carId": 2,
       "userId": 2,
       "description": "GLC 300 – ביצועים מרשימים ועיצוב נקי ויפה. מערכת הניווט מצוינת.",
       "rating": 4
     },
     {
       "id": "4",
-      "productId": 3,
+      "carId": 3,
       "userId": 4,
       "description": "S500 הוא הגדרה של יוקרה. כל פרט מושלם, מהמנוע עד לריפוד.",
       "rating": 5
     },
     {
       "id": "5",
-      "productId": 4,
+      "carId": 4,
       "userId": 5,
       "description": "AMG GLC מדהים. עוצמה עצומה ואגרסיביות בשילוב יוקרה – שילוב נדיר.",
       "rating": 5
     },
     {
       "id": "6",
-      "productId": 5,
+      "carId": 5,
       "userId": 6,
       "description": "קלאס V מושלם להסעת קבוצות. מרחבי, נוח ומרשים. ממליץ בחום.",
       "rating": 4
     },
     {
       "id": "7",
-      "productId": 6,
+      "carId": 6,
       "userId": 7,
       "description": "BMW 750 – ייצוגי, שקט ועוצמתי. מנוע ה-V12 הוא חוויה בפני עצמה.",
       "rating": 5
     },
     {
       "id": "8",
-      "productId": 7,
+      "carId": 7,
       "userId": 8,
       "description": "X5 מאזן בין נוחות לביצועים בצורה מושלמת. מצוין לטיולים משפחתיים.",
       "rating": 4
     },
     {
       "id": "9",
-      "productId": 8,
+      "carId": 8,
       "userId": 9,
       "description": "X6 – עיצוב פנומנלי שמושך עיניים. תחושת נהיגה ספורטיבית ומהנה.",
       "rating": 5
     },
     {
       "id": "10",
-      "productId": 9,
+      "carId": 9,
       "userId": 10,
       "description": "אודי A8 – רמה של מכונית נשיאות. כל אביזר ברמה הגבוהה ביותר.",
       "rating": 5
     },
     {
       "id": "11",
-      "productId": 10,
+      "carId": 10,
       "userId": 1,
       "description": "Q7 הוא ה-SUV המשפחתי המושלם. מרחבי, חזק ונוח לכל הנוסעים.",
       "rating": 4
     },
     {
       "id": "12",
-      "productId": 11,
+      "carId": 11,
       "userId": 2,
       "description": "פורשה מקאן – מהנה לנהיגה, תגובתי ועם נוכחות חזקה. שווה כל שקל.",
       "rating": 5
     },
     {
       "id": "13",
-      "productId": 12,
+      "carId": 12,
       "userId": 3,
       "description": "ריינג' רובר ספורט – יוקרה + שטח + ספורטיביות. השילוב המנצח.",
       "rating": 5
     },
     {
       "id": "14",
-      "productId": 13,
+      "carId": 13,
       "userId": 4,
       "description": "ג'יפ רנגלר – חוויה אחרת לגמרי. קרוב לטבע, כיפי ומסעיר.",
       "rating": 4
     },
     {
       "id": "15",
-      "productId": 14,
+      "carId": 14,
       "userId": 5,
       "description": "פורשה 911 GT3 – חוויית נהיגה שלא תישכח. מנוע השאיבה הטבעית הוא מוסיקה.",
       "rating": 5
     },
     {
       "id": "16",
-      "productId": 18,
+      "carId": 18,
       "userId": 6,
       "description": "מוסטנג 67 – אספנות ברמה הגבוהה. כל נסיעה היא שיעור בהיסטוריה של המכוניות.",
       "rating": 5
     },
     {
       "id": "17",
-      "productId": 19,
+      "carId": 19,
       "userId": 7,
       "description": "קורוט 65 – נדיר ומרהיב. אחד הרכבים היפים ביותר שנוצרו אי פעם.",
       "rating": 5
     },
     {
       "id": "18",
-      "productId": 24,
+      "carId": 24,
       "userId": 8,
       "description": "יגואר E-Type הוא יצירת אמנות על גלגלים. קווים שאין כמותם בעולם.",
       "rating": 5
     },
     {
       "id": "19",
-      "productId": 15,
+      "carId": 15,
       "userId": 9,
       "description": "פרארי F8 – ספורט קיצוני שהפך לנסיעה שמוחה מן הזיכרון לעולם.",
       "rating": 5
     },
     {
       "id": "20",
-      "productId": 33,
+      "carId": 33,
       "userId": 10,
       "description": "BMW M3 Competition – אחד הסדאנים הספורטיביים הטובים ביותר בעולם. מרשים מאוד.",
       "rating": 5

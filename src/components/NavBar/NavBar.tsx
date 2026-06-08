@@ -15,7 +15,8 @@ const NavBar: FC<NavBarProps> = () => {
   const [categories, setCategories] = useState<Category[] | null>(null);
 
   useEffect(() => {
-    carService.getCategories().then(data => setCategories(data));
+    carService.getCategories().then(data => {  console.log(data); setCategories(data)});
+    
   }, []);
 
   return <div className="NavBar">

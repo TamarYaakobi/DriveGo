@@ -1,4 +1,4 @@
-.NavBar {
+// .NavBar {
     .nav-ul {
         display: flex;
         list-style: none;
@@ -28,10 +28,13 @@
         text-decoration: none;
         padding: 6px 14px;
         display: block;
+        position: relative;
     }
 
+    
+// }
     .dropdown {
-        position: absolute; // ← חשוב
+        position: absolute;
         top: 100%;
         right: 0;
         background: white;
@@ -41,4 +44,3 @@
         z-index: 999;
         min-width: 150px;
     }
-}

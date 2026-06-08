@@ -14,6 +14,15 @@ export default new class UserService {
         }
     }
 
+    async getUsers(): Promise<User[] | null> {
+        try {
+            return (await axios.get<User[]>(`${this.BASE_URL}/users`)).data
+        }
+        catch (error) {
+            return null
+        }
+    }
+
     async addUser(user: User): Promise<User | null> {
         try {
             const existingUser = await this.getUserByEmail(user.email)

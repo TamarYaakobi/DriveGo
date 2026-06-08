@@ -1,1 +1,21 @@
-.CarCard {}
+.CarCard {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  small {
+    font-size: 14px;
+    color: #333;
+  }
+}
