@@ -1,1 +1,212 @@
-.AboutUs {}
+// משתני העיצוב היוקרתיים של האתר
+$bg-dark: #0f0f11;
+$bg-card: #1a1a1e;
+$gold-primary: #d4af37;
+$gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+$text-light: #ffffff;
+$text-muted: #aaaaaa;
+
+.AboutUs {
+  background-color: $bg-dark;
+  color: $text-light;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 70px; // מונע מהתוכן להיכנס מתחת ל-NavBar הקבוע
+
+  // --- About Hero Section ---
+  .about-hero {
+    position: relative;
+    height: 45vh;
+    background: url('https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(15, 15, 17, 1));
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+      }
+
+      .gold-subtitle {
+        font-size: 1.1rem;
+        color: $gold-primary;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  // --- Story Section ---
+  .story-section {
+    padding: 80px 20px;
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 50px;
+      align-items: center;
+    }
+
+    .story-content {
+      .section-tag {
+        color: $gold-primary;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin: 0 0 15px 0;
+      }
+
+      .gold-line {
+        width: 50px;
+        height: 3px;
+        background: $gold-gradient;
+        margin-bottom: 25px;
+      }
+
+      p {
+        color: $text-muted;
+        line-height: 1.8;
+        font-size: 1.05rem;
+        margin-bottom: 20px;
+
+        strong {
+          color: $text-light;
+        }
+      }
+    }
+
+    .story-image {
+      img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+      }
+    }
+  }
+
+  // --- Values Section ---
+  .values-section {
+    padding: 80px 20px;
+    background-color: rgba(255, 255, 255, 0.02);
+
+    .section-header {
+      margin-bottom: 60px;
+      h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+      }
+      .gold-divider {
+        width: 60px;
+        height: 3px;
+        background: $gold-gradient;
+        margin: 10px auto 0;
+      }
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .value-card {
+      background-color: $bg-card;
+      padding: 40px 30px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      position: relative;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        border-color: rgba(212, 175, 55, 0.3);
+      }
+
+      .value-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: $gold-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0.3;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      p {
+        color: $text-muted;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+  }
+
+  // --- About CTA Section ---
+  .about-cta {
+    padding: 100px 20px;
+    background: linear-gradient(rgba(15, 15, 17, 0.9), rgba(15, 15, 17, 0.9)),
+                url('https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover;
+
+    h2 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: $text-muted;
+      font-size: 1.1rem;
+      margin-bottom: 35px;
+    }
+
+    .gold-btn {
+      background: $gold-gradient;
+      border: none;
+      color: #000;
+      padding: 14px 40px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+      }
+    }
+  }
+}

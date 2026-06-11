@@ -9,6 +9,8 @@ import Cars from './components/Cars/Cars'
 import AboutUs from './components/AboutUs/AboutUs'
 import NavBar from './components/NavBar/NavBar'
 import CarDetails from './components/CarDetails/CarDetails'
+import UserDetails from './components/UserDetails/UserDetails'
+import AddCar from './components/AddCar/AddCar'
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         </Route>
         <Route path='Cars/:category/:id' element={<CarDetails></CarDetails>}></Route>
         <Route path='AboutUs' element={<AboutUs></AboutUs>}></Route>
+        <Route path='AddCar' element={<AddCar></AddCar>}></Route>
+        <Route path='UserDetails' element={<UserDetails></UserDetails>}></Route>
       </Routes>
     </>
   )

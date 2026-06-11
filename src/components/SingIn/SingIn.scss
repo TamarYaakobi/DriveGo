@@ -1,1 +1,154 @@
-.SingIn {}
+// קו עיצובי יוקרתי אחיד
+$bg-dark-trans: rgba(15, 15, 17, 0.75);
+$gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+$gold-glow: 0 0 15px rgba(212, 175, 55, 0.2);
+$input-bg: rgba(255, 255, 255, 0.05);
+
+.SingIn {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(15, 15, 17, 0.9)), 
+              url('https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover no-repeat fixed;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 60px;
+  box-sizing: border-box;
+
+  .auth-container {
+    background: $bg-dark-trans;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 20px;
+    padding: 45px 40px;
+    width: 100%;
+    max-width: 460px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), $gold-glow;
+    animation: fadeInForm 0.6s ease-out;
+
+    .auth-header {
+      text-align: center;
+      margin-bottom: 35px;
+
+      .brand-title {
+        font-size: 2.5rem;
+        font-weight: 900;
+        background: $gold-gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0 0 5px 0;
+        letter-spacing: 1px;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+        color: #ffffff;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .gold-bar {
+        width: 50px;
+        height: 2px;
+        background: $gold-gradient;
+        margin: 15px auto 0;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+      text-align: right;
+
+      label {
+        color: #dddddd;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        display: block;
+        font-weight: 500;
+      }
+
+      .form-control {
+        background: $input-bg;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 14px 16px;
+        color: #ffffff;
+        font-size: 0.95rem;
+        width: 100%;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          background: rgba(255, 255, 255, 0.08);
+          border-color: #d4af37;
+          box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        &::placeholder {
+          color: #666666;
+        }
+      }
+
+      .error-msg {
+        color: #ff4d4d;
+        font-size: 0.8rem;
+        margin: 6px 0 0 0;
+        font-weight: 500;
+      }
+    }
+
+    .submit-gold-btn {
+      background: $gold-gradient;
+      border: none;
+      color: #000000;
+      width: 100%;
+      padding: 14px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+      }
+    }
+
+    .redirect-section {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 20px;
+
+      p {
+        color: #ff4d4d;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+      }
+
+      .switch-auth-btn {
+        background: none;
+        border: none;
+        color: #d4af37;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 0.2s;
+
+        &:hover {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInForm {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

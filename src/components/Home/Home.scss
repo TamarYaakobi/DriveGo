@@ -1,3 +1,394 @@
+// הגדרת משתני צבע לסטייל יוקרתי
+$bg-dark: #0f0f11;
+$bg-card: #1a1a1e;
+$gold-primary: #d4af37;
+$gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+$text-light: #ffffff;
+$text-muted: #aaaaaa;
+
 .Home {
+  background-color: $bg-dark;
+  color: $text-light;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+
+  // --- Hero Section ---
+  .hero-section {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+
+    .bg-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(15, 15, 17, 1));
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 800px;
+      padding: 20px;
+
+      .logo-container {
+        margin-bottom: 30px;
+        animation: fadeInDown 1.2s ease-out;
+
+        .brand-title {
+          font-size: 4rem;
+          font-weight: 800;
+          letter-spacing: 2px;
+          background: $gold-gradient;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin: 0;
+          text-transform: uppercase;
+        }
+
+        .brand-subtitle {
+          font-size: 1.2rem;
+          color: $gold-primary;
+          letter-spacing: 4px;
+          margin-top: 5px;
+          text-transform: uppercase;
+        }
+      }
+
+      .main-headline {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .sub-headline {
+        font-size: 1.2rem;
+        color: $text-muted;
+        margin-bottom: 40px;
+        font-weight: 300;
+      }
+
+      .cta-button {
+        background: $gold-gradient;
+        border: none;
+        color: #000;
+        padding: 14px 40px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+      }
+    }
+  }
+
+  // --- רכיבים משותפים ---
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+
+    h3 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .gold-divider {
+      width: 60px;
+      height: 3px;
+      background: $gold-gradient;
+      margin: 0 auto;
+    }
+  }
+
+  // --- Features Section ---
+  .features-section {
+    padding: 80px 20px;
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .feature-card {
+      background-color: $bg-card;
+      padding: 40px 30px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        border-color: $gold-primary;
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      h4 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: $gold-primary;
+      }
+
+      p {
+        color: $text-muted;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
+  }
+
+  // --- Categories Section ---
+  .categories-section {
+    padding: 80px 20px;
+    background-color: rgba(255, 255, 255, 0.02);
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .category-card {
+      height: 350px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      transition: transform 0.4s ease;
+
+      &:hover {
+        transform: scale(1.03);
+
+        .category-overlay {
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
+          
+          .discover-more {
+            color: $gold-primary;
+            transform: translateX(-5px);
+          }
+        }
+      }
+
+      .category-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.1) 70%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 30px;
+        transition: background 0.3s ease;
+
+        h4 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          margin-bottom: 5px;
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .discover-more {
+          font-size: 0.95rem;
+          color: $text-muted;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+
+  // --- Footer CTA ---
+  .footer-cta {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(15, 15, 17, 0.8), rgba(15, 15, 17, 1)), 
+                url('https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover;
     
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: $text-muted;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      button {
+        padding: 12px 35px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary-gold {
+        background: $gold-gradient;
+        border: none;
+        color: #000;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+      }
+
+      .btn-secondary-outline {
+        background: transparent;
+        border: 2px solid #ffffff;
+        color: #ffffff;
+
+        &:hover {
+          background-color: #ffffff;
+          color: #000;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}
+
+// להוסיף בתוך הבלוק של .footer-cta בתחתית שלו:
+.footer-bottom-links {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+
+  .link-separator {
+    color: $text-muted;
+    opacity: 0.5;
+  }
+
+  // מיכל ה-Tooltip
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
+
+    .tooltip-trigger {
+      color: $gold-primary;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+
+    // ההודעה הצצה הנסתרת כברירת מחדל
+    .custom-tooltip {
+      visibility: hidden;
+      opacity: 0;
+      width: 240px;
+      background-color: #16161a;
+      color: #ffffff;
+      text-align: right;
+      border: 1px solid $gold-primary;
+      border-radius: 8px;
+      padding: 15px;
+      position: absolute;
+      z-index: 10;
+      bottom: 150%; // פותח את ההודעה כלפי מעלה
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      
+      // חץ קטן בתחתית ההודעה הצצה
+      &:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: $gold-primary transparent transparent transparent;
+      }
+
+      p {
+        margin: 5px 0;
+        font-size: 0.85rem;
+        color: #dddddd;
+        line-height: 1.4;
+      }
+
+      &.wide-tooltip {
+        width: 300px;
+      }
+    }
+
+    // כשעומדים עם העכבר - ההודעה מופיעה בצורה חלקה
+    &:hover {
+      .custom-tooltip {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(-50%) translateY(-5px);
+      }
+    }
+  }
+}
+// אנמציות קטנות להוספת יוקרה ותנועה
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

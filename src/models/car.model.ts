@@ -1,22 +1,20 @@
 export class Car {
-    public id: string;
-    public categoryId: number;
-    public companyId: number;
+    public id?: string;
+    public categoryId: string;
+    public companyId: string;
     public seats: number;
     public description: string;
     public year: number;
     public imageUrl: string;
 
     constructor(
-        id: string,
-        categoryId: number,
-        companyId: number,
+        categoryId: string,
+        companyId: string,
         seats: number,
         description: string,
         year: number,
         imageUrl: string
     ) {
-        this.id = id;
         this.categoryId = categoryId;
         this.companyId = companyId;
         this.seats = seats;

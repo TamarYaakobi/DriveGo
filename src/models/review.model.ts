@@ -1,18 +1,16 @@
 export class Review {
-    public id: string;
-    public carId: number;
-    public userId: number;
+    public id?: string;
+    public carId: string;
+    public userId: string;
     public description: string;
     public rating: number;
 
     constructor(
-        id: string,
-        carId: number,
-        userId: number,
+        carId: string,
+        userId: string,
         description: string,
         rating: number
     ) {
-        this.id = id;
         this.carId = carId;
         this.userId = userId;
         this.description = description;

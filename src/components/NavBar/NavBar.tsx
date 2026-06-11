@@ -15,8 +15,8 @@ const NavBar: FC<NavBarProps> = () => {
   const [categories, setCategories] = useState<Category[] | null>(null);
 
   useEffect(() => {
-    carService.getCategories().then(data => {  console.log(data); setCategories(data)});
-    
+    carService.getCategories().then(data => { console.log(data); setCategories(data) });
+
   }, []);
 
   return <div className="NavBar">
@@ -48,10 +48,32 @@ const NavBar: FC<NavBarProps> = () => {
             </ul>
           )}
         </li>
-        <li onClick={() => { }} className='nav-link'>צור קשר</li>
+        {/* <li onClick={() => { }} className='nav-link'>צור קשר</li> */}
+        <li 
+  onClick={() => {
+    // אם המשתמש כבר בדף הבית, נגלול בצורה חלקה
+    const element = document.getElementById('contact-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // אם הוא בדף אחר, קודם נעביר אותו לדף הבית
+      navigate('/');
+      // אופציונלי: לתת לזה חצי שנייה ואז לגלול
+      setTimeout(() => {
+        document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }} 
+  className='nav-link'
+>
+  צור קשר
+</li>
         <li onClick={() => navigate('/SingIn')} className='nav-link'>כניסה</li>
         <li onClick={() => navigate('/SingUp')} className='nav-link'>הרשמה</li>
-        <li style={{ color: "#1c1606", fontSize: "14px", textDecoration: "none", padding: "6px 14px", display: "block" }}>{user ? user.firstName : 'אורח'}</li>
+        <li onClick={() => navigate('/UserDetails')} className='nav-link'>פרטים אישיים</li>
+        {user?.isAdmin && (
+          <li onClick={() => navigate('/AddCar')} className='nav-link'>הוסף מוצר</li>
+        )}       <li className='nav-link'>{user ? user.firstName : 'אורח'}</li>
       </ul>
     </nav>
   </div>

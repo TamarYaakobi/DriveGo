@@ -1,46 +1,168 @@
-// .NavBar {
-    .nav-ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        gap: 2px;
-    }
+// // .NavBar {
+//     .nav-ul {
+//         display: flex;
+//         list-style: none;
+//         margin: 0;
+//         padding: 0;
+//         gap: 2px;
+//     }
 
-    .nav-bar {
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 56px;
-        padding: 0 28px;
-        background: transparent;
-        font-family: 'Heebo', sans-serif;
-    }
+//     .nav-bar {
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         left: 0;
+//         z-index: 100;
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//         height: 56px;
+//         padding: 0 28px;
+//         background: transparent;
+//         font-family: 'Heebo', sans-serif;
+//     }
 
-    .nav-link {
-        color: #c9a84c;
-        font-size: 14px;
-        text-decoration: none;
-        padding: 6px 14px;
-        display: block;
-        position: relative;
-    }
+//     .nav-link {
+//         color: #c9a84c;
+//         font-size: 14px;
+//         text-decoration: none;
+//         padding: 6px 14px;
+//         display: block;
+//         position: relative;
+//     }
 
     
-// }
-    .dropdown {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: white;
-        list-style: none;
-        padding: 8px 0;
-        margin: 0;
-        z-index: 999;
-        min-width: 150px;
+// // }
+//     .dropdown {
+//         position: absolute;
+//         top: 100%;
+//         right: 0;
+//         background: white;
+//         list-style: none;
+//         padding: 8px 0;
+//         margin: 0;
+//         z-index: 999;
+//         min-width: 150px;
+//     }
+// משתני צבע תואמים לרוח האתר
+$nav-bg: rgba(15, 15, 17, 0.85); // שחור אלגנטי עם שקיפות קלה
+$gold-primary: #d4af37;
+$gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+$text-light: #ffffff;
+$text-muted: #aaaaaa;
+
+.NavBar {
+  position: fixed; // נשאר קבוע למעלה בזמן גלילה
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: $nav-bg;
+  backdrop-filter: blur(10px); // אפקט טשטוש זכוכית יוקרתי
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15); // קו זהב עדין מאוד בתחתית
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+
+  .nav-bar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; // שומר על מרווחים נכונים
+  }
+
+  .nav-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 25px; // מרווח שווה בין הלינקים
+    width: 100%;
+    
+    // דוחף את שם המשתמש/אורח לצד שמאל של המסך (בגלל שהכיוון הוא RTL)
+    li:last-child {
+      margin-right: auto;
+      font-weight: 600;
+      background: $gold-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+  }
+
+  .nav-link {
+    color: $text-light;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+
+    // אפקט קו תחתון מוזהב שמתרחב בצורה חלקה ב-Hover
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      right: 0;
+      background: $gold-gradient;
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: $gold-primary;
+      
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+  // עיצוב תפריט הקטגוריות הנפתח (Dropdown)
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #16161a;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    padding: 10px 0;
+    min-width: 180px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    list-style: none;
+    animation: fadeInDropdown 0.25s ease-out;
+    z-index: 1010;
+
+    li {
+      padding: 10px 20px;
+      color: $text-light;
+      font-size: 0.95rem;
+      transition: background 0.2s ease, color 0.2s ease;
+      text-align: right;
+
+      &:hover {
+        background-color: rgba(212, 175, 55, 0.1);
+        color: $gold-primary;
+      }
+    }
+  }
+}
+
+// התאמה קלה ל-Home כדי שלא ייכנס מתחת ל-NavBar הקבוע
+.Home {
+  padding-top: 70px; // בגובה ה-NavBar כדי שהתוכן לא יתחבא תחתיו
+}
+
+@keyframes fadeInDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
