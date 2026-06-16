@@ -11,17 +11,17 @@ const Home: FC<HomeProps> = () => {
     {
       id: '1',
       name: 'רכב אטרקציות',
-      img: 'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' // רכב ספורט/חוויה צהוב ומרשים
+      img: 'https://www.asfir.co.il/cdn/shop/articles/front-bar-547006-_1__optimized.jpg?v=1771413066'
     },
     {
       id: '2',
       name: 'רכבי אספנות',
-      img: 'https://images.pexels.com/photos/831413/pexels-photo-831413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' // רכב קלאסי נוסטלגי ויוקרתי
+      img: 'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     {
       id: '3',
       name: 'רכבי יוקרה',
-      img: 'https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' // מרצדס שחורה קלאסית
+      img: 'https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
   ];
 
@@ -40,14 +40,19 @@ const Home: FC<HomeProps> = () => {
 
         <div className="hero-content">
           <div className="logo-container">
-            <h1 className="brand-title">Drive Go</h1>
-            <p className="brand-subtitle">- Drive the experience -</p>
+            <img src="/public/logo_without_back.png" alt="Drive Go" className="hero-main-logo" />
           </div>
           <h2 className="main-headline">אל תסתפק בנסיעה. תבחר בחוויה.</h2>
           <p className="sub-headline">חוויית הנהיגה האולטימטיבית מחכה לך עם צי הרכבים המובחר בישראל.</p>
           <button className="cta-button" onClick={() => navigate('/Cars')}>
             לצפייה בקולקציה
           </button>
+        </div>
+
+        <div className="scroll-down-hint" onClick={() => {
+          document.querySelector('.features-section')?.scrollIntoView({ behavior: 'smooth' });
+        }}>
+          <span className="arrow">↓</span>
         </div>
       </section>
 
@@ -107,7 +112,6 @@ const Home: FC<HomeProps> = () => {
         </div>
 
         <div className="footer-bottom-links">
-
           <div className="tooltip-container">
             <span className="tooltip-trigger">📞 צור קשר</span>
             <div className="custom-tooltip">
@@ -127,7 +131,6 @@ const Home: FC<HomeProps> = () => {
               <p>• אישור סופי של ההזמנה כפוף לחתימה על חוזה השכירות הדיגיטלי.</p>
             </div>
           </div>
-
         </div>
       </section>
     </div>

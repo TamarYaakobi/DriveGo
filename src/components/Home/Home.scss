@@ -13,7 +13,7 @@ $text-muted: #aaaaaa;
 
   .hero-section {
     position: relative;
-    height: 90vh;
+    height: 78vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +39,7 @@ $text-muted: #aaaaaa;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(15, 15, 17, 1));
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(15, 15, 17, 1));
       z-index: 2;
     }
 
@@ -48,41 +48,34 @@ $text-muted: #aaaaaa;
       z-index: 3;
       max-width: 800px;
       padding: 20px;
+      margin-top: -20px;
 
       .logo-container {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         animation: fadeInDown 1.2s ease-out;
+        display: flex;
+        justify-content: center;
+        width: 100%;
 
-        .brand-title {
-          font-size: 4rem;
-          font-weight: 800;
-          letter-spacing: 2px;
-          background: $gold-gradient;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          margin: 0;
-          text-transform: uppercase;
-        }
-
-        .brand-subtitle {
-          font-size: 1.2rem;
-          color: $gold-primary;
-          letter-spacing: 4px;
-          margin-top: 5px;
-          text-transform: uppercase;
+        .hero-main-logo {
+          max-width: 500px; 
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+          filter: drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.7));
         }
       }
 
       .main-headline {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
         font-weight: 700;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
       }
 
       .sub-headline {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         color: $text-muted;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         font-weight: 300;
       }
 
@@ -90,8 +83,8 @@ $text-muted: #aaaaaa;
         background: $gold-gradient;
         border: none;
         color: #000;
-        padding: 14px 40px;
-        font-size: 1.1rem;
+        padding: 13px 38px;
+        font-size: 1.05rem;
         font-weight: 600;
         border-radius: 50px;
         cursor: pointer;
@@ -104,20 +97,38 @@ $text-muted: #aaaaaa;
         }
       }
     }
+
+    .scroll-down-hint {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      cursor: pointer;
+      color: $gold-primary;
+      font-size: 1.8rem;
+      animation: bounceArrow 2s infinite;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 
   .section-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px; 
 
     h3 {
-      font-size: 2.2rem;
+      font-size: 1.85rem;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .gold-divider {
-      width: 60px;
+      width: 45px;
       height: 3px;
       background: $gold-gradient;
       margin: 0 auto;
@@ -125,17 +136,17 @@ $text-muted: #aaaaaa;
   }
 
   .features-section {
-    padding: 80px 20px;
+    padding: 35px 20px 25px 20px; 
 
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      gap: 20px;
     }
 
     .feature-card {
       background-color: $bg-card;
-      padding: 40px 30px;
+      padding: 25px 20px; 
       border-radius: 12px;
       text-align: center;
       border: 1px solid rgba(255, 255, 255, 0.05);
@@ -147,38 +158,37 @@ $text-muted: #aaaaaa;
       }
 
       .feature-icon {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
+        font-size: 2rem;
+        margin-bottom: 12px;
       }
 
       h4 {
-        font-size: 1.3rem;
+        font-size: 1.15rem;
         font-weight: 600;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         color: $gold-primary;
       }
 
       p {
         color: $text-muted;
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 0.9rem;
+        line-height: 1.5;
         margin: 0;
       }
     }
   }
-
   .categories-section {
-    padding: 80px 20px;
-    background-color: rgba(255, 255, 255, 0.02);
+    padding: 30px 20px;
+    background-color: rgba(255, 255, 255, 0.01);
 
     .categories-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
     .category-card {
-      height: 350px;
+      height: 260px;
       background-size: cover;
       background-position: center;
       border-radius: 15px;
@@ -189,10 +199,10 @@ $text-muted: #aaaaaa;
       transition: transform 0.4s ease;
 
       &:hover {
-        transform: scale(1.03);
+        transform: scale(1.02);
 
         .category-overlay {
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 100%);
 
           .discover-more {
             color: $gold-primary;
@@ -207,22 +217,22 @@ $text-muted: #aaaaaa;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.1) 70%);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 70%);
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        padding: 30px;
+        padding: 20px;
         transition: background 0.3s ease;
 
         h4 {
-          font-size: 1.8rem;
+          font-size: 1.45rem;
           font-weight: 700;
-          margin-bottom: 5px;
+          margin-bottom: 4px;
           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
 
         .discover-more {
-          font-size: 0.95rem;
+          font-size: 0.85rem;
           color: $text-muted;
           transition: all 0.3s ease;
         }
@@ -232,31 +242,31 @@ $text-muted: #aaaaaa;
 
   .footer-cta {
     text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(rgba(15, 15, 17, 0.8), rgba(15, 15, 17, 1)),
+    padding: 75px 20px; // צמצום רווחים מ-100px
+    background: linear-gradient(rgba(15, 15, 17, 0.82), rgba(15, 15, 17, 1)),
       url('https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover;
 
     h3 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: 700;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     p {
       color: $text-muted;
-      font-size: 1.1rem;
-      margin-bottom: 40px;
+      font-size: 1.05rem;
+      margin-bottom: 30px;
     }
 
     .cta-actions {
       display: flex;
-      gap: 20px;
+      gap: 15px;
       justify-content: center;
       flex-wrap: wrap;
 
       button {
-        padding: 12px 35px;
-        font-size: 1rem;
+        padding: 11px 32px;
+        font-size: 0.95rem;
         font-weight: 600;
         border-radius: 50px;
         cursor: pointer;
@@ -291,12 +301,12 @@ $text-muted: #aaaaaa;
 }
 
 .footer-bottom-links {
-  margin-top: 60px;
+  margin-top: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 20px;
 
   .link-separator {
@@ -311,7 +321,7 @@ $text-muted: #aaaaaa;
     .tooltip-trigger {
       color: $gold-primary;
       cursor: pointer;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 500;
       transition: color 0.3s ease;
 
@@ -376,9 +386,20 @@ $text-muted: #aaaaaa;
     opacity: 0;
     transform: translateY(-20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes bounceArrow {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-8px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-4px);
   }
 }

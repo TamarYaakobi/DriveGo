@@ -41,7 +41,7 @@ $text-muted: #aaaaaa;
     &:nth-of-type(2)::before { content: " שנת ייצור: "; font-weight: bold; color: $gold-primary; }
     &:nth-of-type(3)::before { content: " מותג / חברה: "; font-weight: bold; color: $gold-primary; }
     &:nth-of-type(4)::before { content: " קטגוריית סיור: "; font-weight: bold; color: $gold-primary; }
-    
+      
     &:nth-of-type(5) {
       margin-top: 25px;
       font-size: 1.2rem;
@@ -52,8 +52,75 @@ $text-muted: #aaaaaa;
       border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.05);
       border-right: 4px solid $gold-primary;
-      
+        
       &::before { content: "📝 סקירת דגם: \A"; white-space: pre-wrap; font-weight: bold; color: #fff;}
+    }
+  }
+
+  .add-review-btn-elegant {
+    background: transparent;
+    border: 1px solid $gold-primary;
+    color: #ffffff;
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px 0 20px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+
+    span {
+      color: $gold-primary;
+      font-size: 1.1rem;
+    }
+
+    &:hover {
+      background: $gold-gradient;
+      color: #000000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+
+      span {
+        color: #000000;
+      }
+    }
+  }
+
+  .star-rating-container {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 4px;
+    vertical-align: middle;
+
+    .star-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 22px; 
+      height: 22px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .star-empty {
+        fill: #1c1c22;          
+        stroke: #FFD700;         
+        stroke-width: 1.5px;   
+      }
+
+      .star-filled {
+        fill: #FFD700;          
+        stroke: #FFD700;         
+        stroke-width: 1.5px;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
     }
   }
 
@@ -72,29 +139,10 @@ $text-muted: #aaaaaa;
       font-size: 1.1rem;
       font-weight: 600;
     }
-    
+      
     span:last-child {
       color: $gold-primary;
       font-weight: 700;
-    }
-  }
-
-  button:first-of-type:not([type="submit"]) {
-    background: none;
-    border: 2px dashed rgba(212, 175, 55, 0.4);
-    color: $gold-primary;
-    font-size: 1.4rem;
-    width: 100%;
-    padding: 15px;
-    border-radius: 12px;
-    cursor: pointer;
-    margin: 20px 0;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: rgba(212, 175, 55, 0.05);
-      border-color: $gold-primary;
-      transform: scale(1.01);
     }
   }
 
@@ -112,14 +160,8 @@ $text-muted: #aaaaaa;
       flex-direction: column;
       gap: 6px;
 
-      .rating__score:first-of-type {
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: $gold-primary;
-        
-        &::after {
-          content: " ★";
-        }
+      .user-stars-wrapper {
+        margin-bottom: 4px;
       }
 
       .rating__reviews {
@@ -131,7 +173,7 @@ $text-muted: #aaaaaa;
         margin-bottom: 5px;
       }
 
-      .rating__score:last-of-type {
+      .rating__score {
         font-size: 1rem;
         color: $text-muted;
         line-height: 1.5;
@@ -192,7 +234,7 @@ $text-muted: #aaaaaa;
           border-color: $gold-primary;
         }
       }
-      
+        
       p {
         color: #ff4d4d;
         font-size: 0.8rem;

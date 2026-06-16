@@ -1,7 +1,8 @@
-@import '../Cars/Cars.scss'; 
+@use '../Cars/Cars.scss'; 
 
 $bg-dark: #0f0f11;
 $gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+$red-gradient: linear-gradient(135deg, #ff6b6b 0%, #dc3545 50%, #8b0000 100%);
 $text-muted: #aaaaaa;
 
 .Favorite {
@@ -12,6 +13,43 @@ $text-muted: #aaaaaa;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .favorites-container {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .favorites-header-section {
+    text-align: center;
+    margin-bottom: 45px;
+    padding: 30px 60px;
+    background: linear-gradient(90deg, rgba(22, 22, 26, 0) 0%, rgba(22, 22, 26, 0.8) 50%, rgba(22, 22, 26, 0) 100%);
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+
+    .favorites-main-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: $gold-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+      letter-spacing: 1px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .gold-separator {
+      width: 60px;
+      height: 2px;
+      background: $gold-gradient;
+      margin: 15px auto 0;
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+    }
+  }
 
   .empty-favorites {
     margin-top: 60px;
@@ -27,10 +65,10 @@ $text-muted: #aaaaaa;
     .heart-icon {
       font-size: 3.5rem;
       margin-bottom: 20px;
-      background: $gold-gradient;
+      background: $red-gradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0px 4px 8px rgba(212, 55, 55, 0.2));
+      filter: drop-shadow(0px 4px 12px rgba(220, 53, 69, 0.3));
       display: inline-block;
     }
 
@@ -51,7 +89,6 @@ $text-muted: #aaaaaa;
 
   .Cars {
     width: 100%;
-    max-width: 1400px;
     padding: 0; 
   }
 }
@@ -64,6 +101,18 @@ $text-muted: #aaaaaa;
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .Favorite {
+    .favorites-header-section {
+      padding: 20px 30px;
+      
+      .favorites-main-title {
+        font-size: 2rem;
+      }
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type FC } from 'react';
+import { useEffect, useMemo, useState, useRef, type FC } from 'react';
 import './CarDetails.scss';
 import type { Car } from '../../models/car.model';
 import type { Review } from '../../models/review.model';
@@ -11,11 +11,45 @@ import * as yup from 'yup'
 import { useFormik } from 'formik';
 import { setMessage } from '../../redux/slices/message.slice';
 
-interface CarDetailsProps {
+interface StarRatingProps {
+  rating: number;
 }
 
-const CarDetails: FC<CarDetailsProps> = () => {
+const StarRating: FC<StarRatingProps> = ({ rating }) => {
+  return (
+    <div className="star-rating-container">
+      {[1, 2, 3, 4, 5].map((starIndex) => {
+        let fillPercentage = 0;
+        if (rating >= starIndex) {
+          fillPercentage = 100;
+        } else if (rating > starIndex - 1) {
+          fillPercentage = (rating - (starIndex - 1)) * 100;
+        }
 
+        return (
+          <div key={starIndex} className="star-wrapper">
+            <svg className="star-empty" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+
+            <svg
+              className="star-filled"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ clipPath: `inset(0 0 0 ${100 - fillPercentage}%)` }}
+            >
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+interface CarDetailsProps { }
+
+const CarDetails: FC<CarDetailsProps> = () => {
   const user = useSelector((state: User) => state.user.user)
   const location = useLocation();
   const dispatch = useDispatch()
@@ -24,9 +58,11 @@ const CarDetails: FC<CarDetailsProps> = () => {
   const [users, setUsers] = useState<User[]>([])
   const [isAdd, setIsAdd] = useState(false)
 
+  const formRef = useRef<HTMLDivElement>(null);
+
   const myForm = useFormik({
     initialValues: {
-      description: false,
+      description: '',
       rating: ''
     },
     onSubmit: async (value: any) => {
@@ -34,7 +70,7 @@ const CarDetails: FC<CarDetailsProps> = () => {
         carId: car.id,
         userId: user.id,
         description: value.description,
-        rating: value.rating
+        rating: Number(value.rating) 
       }
 
       let isReview = reviews?.find(r => r.userId === review.userId && r.carId === review.carId);
@@ -43,7 +79,7 @@ const CarDetails: FC<CarDetailsProps> = () => {
         const updatedReviews = await carService.getReviewsByCarId(car.id)
         setReviews(updatedReviews || [])
         setIsAdd(false)
-
+        myForm.resetForm();
       }
       else {
         dispatch(setMessage({
@@ -58,22 +94,19 @@ const CarDetails: FC<CarDetailsProps> = () => {
         .min(1, 'מינימום 1')
         .max(5, 'מקסימום 5')
         .required('שדה חובה')
-
     })
   })
 
   useEffect(() => {
     const fetchData = async () => {
       const responseReviews = await carService.getReviewsByCarId(car.id)
-      console.log(responseReviews)
       setReviews(responseReviews || [])
 
       const responseUsers = await userService.getUsers()
       setUsers(responseUsers || [])
-      console.log("car.id", car.id, typeof car.id)
     }
     fetchData()
-  }, [])
+  }, [car.id])
 
   const averageRating = useMemo(() => {
     if (!reviews.length) return 0;
@@ -94,9 +127,16 @@ const CarDetails: FC<CarDetailsProps> = () => {
       setReviews(updatedReviews || [])
     }
   }
-console.log(reviews)
+
+  const handleOpenForm = () => {
+    setIsAdd(true);
+    setTimeout(() => {
+      formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+  };
+
   return <div className="CarDetails">
-    <img src={car.imageUrl}></img>
+    <img src={car.imageUrl} alt="Car"></img>
     <br></br>
     <small>מס מקומות: {car.seats}</small>
     <br></br>
@@ -109,18 +149,19 @@ console.log(reviews)
     <small> {car.description}</small>
     <br></br>
     <br></br>
+
     {user && !user.isAdmin && (
-      <button onClick={() => setIsAdd(true)}>➕</button>
+      <button className="add-review-btn-elegant" onClick={handleOpenForm}>
+        <span>＋</span> הוספת חוות דעת
+      </button>
     )}
+
     <div className="average-rating">
       <span>דירוג ממוצע: </span>
-      {[1, 2, 3, 4, 5].map((star) => (
-        <span key={star} style={{ color: star <= Math.round(averageRating) ? '#FFD700' : '#ccc', fontSize: '24px' }}>
-          ★
-        </span>
-      ))}
+      <StarRating rating={averageRating} />
       <span>({averageRating.toFixed(1)})</span>
     </div>
+
     {reviews.map((i) =>
       <div key={i.id}>
         <br></br>
@@ -128,7 +169,9 @@ console.log(reviews)
         <div className="rating">
           <span className="rating__stars"></span>
           <div className="rating__number">
-            <span className="rating__score">{i.rating}</span>
+            <div className="user-stars-wrapper">
+              <StarRating rating={i.rating} />
+            </div>
             <span className="rating__reviews">{users?.find(user => (user.id) === i.userId)?.firstName}</span>
             <span className="rating__score">{i.description}</span>
           </div>
@@ -136,33 +179,36 @@ console.log(reviews)
         </div>
       </div>
     )}
-    {isAdd && <>
-      <form onSubmit={myForm.handleSubmit}>
 
-        <div className="form-group">
-          <label htmlFor="description">הכנס חוות דעת</label>
-          <input onChange={myForm.handleChange} type="text" className="form-control" name="description" id="description" />
-          {myForm.errors.description && <p>{myForm.errors.description as string}</p>}
-        </div>
+    <div ref={formRef}>
+      {isAdd && <>
+        <form onSubmit={myForm.handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="description">הכנס חוות דעת</label>
+            <input onChange={myForm.handleChange} value={myForm.values.description} type="text" className="form-control" name="description" id="description" />
+            {myForm.errors.description && <p>{myForm.errors.description as string}</p>}
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="rating">נקד אותנו</label>
-          <input
-            onChange={myForm.handleChange}
-            type="number"
-            className="form-control"
-            name="rating"
-            id="rating"
-            min={1}
-            max={5}
-          />
-          {myForm.errors.rating && <p>{myForm.errors.rating as string}</p>}
-        </div>
+          <div className="form-group">
+            <label htmlFor="rating">נקד אותנו</label>
+            <input
+              onChange={myForm.handleChange}
+              value={myForm.values.rating}
+              type="number"
+              className="form-control"
+              name="rating"
+              id="rating"
+              min={1}
+              max={5}
+              step="0.1"
+            />
+            {myForm.errors.rating && <p>{myForm.errors.rating as string}</p>}
+          </div>
 
-        <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
-    </>}
-
+          <button type="submit" className="btn btn-primary">Submit</button>
+        </form>
+      </>}
+    </div>
   </div>
 };
 

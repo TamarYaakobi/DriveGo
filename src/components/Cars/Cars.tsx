@@ -41,7 +41,6 @@ const Cars: FC = () => {
     fetchData()
   }, [page, urlParams.category])
 
-  // IntersectionObserver
   useEffect(() => {
     if (!loaderRef.current) return
     const observer = new IntersectionObserver((entries) => {

@@ -1,4 +1,4 @@
-@import '../SignIn/SignIn.scss';
+@use '../SignIn/SignIn.scss';
 
 .SignUp {
   @extend .SignIn;

@@ -16,36 +16,42 @@ $text-muted: #aaaaaa;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 
   .nav-bar {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 15px 30px;
+    max-width: 100%; 
+    padding: 12px 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .nav-ul {
+  .nav-logo-container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex: 1; 
+    justify-content: flex-start;
+
+    .nav-logo {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+
+  .nav-ul.main-navigation {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
-    gap: 25px;
-    width: 100%;
-
-    li:last-child {
-      margin-right: auto;
-      font-weight: 600;
-      background: $gold-gradient;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    gap: 30px;
+    flex: 2;
+    justify-content: center; 
   }
 
   .nav-link {
     color: $text-light;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.05rem; 
+    font-weight: 600; 
     cursor: pointer;
     position: relative;
     padding: 8px 0;
@@ -72,6 +78,44 @@ $text-muted: #aaaaaa;
     }
   }
 
+  .user-profile-area {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .user-profile-widget {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 8px 18px;
+    border-radius: 25px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    width: fit-content;
+    white-space: nowrap;
+
+    .favorites-icon {
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: transform 0.2s ease;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    .user-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      background: $gold-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
   .dropdown {
     position: absolute;
     top: 100%;
@@ -80,7 +124,7 @@ $text-muted: #aaaaaa;
     border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 8px;
     padding: 10px 0;
-    min-width: 180px;
+    min-width: 190px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     list-style: none;
     animation: fadeInDropdown 0.25s ease-out;
@@ -102,7 +146,7 @@ $text-muted: #aaaaaa;
 }
 
 .Home {
-  padding-top: 70px;
+  padding-top: 72px;
 }
 
 @keyframes fadeInDropdown {

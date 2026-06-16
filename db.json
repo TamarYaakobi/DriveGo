@@ -100,7 +100,7 @@
       "id": "Uiw9LYFpo9M"
     },
     {
-      "firstName": "תמר",
+      "firstName": "תמי",
       "lastName": "יעקבי",
       "idNumber": "216234807",
       "email": "t3232853@gmail.com",
@@ -143,6 +143,15 @@
       "password": "ddddddddddddddddddd",
       "isAdmin": false,
       "id": "SJ2Y-u2"
+    },
+    {
+      "firstName": "שרה",
+      "lastName": "קין",
+      "idNumber": "123456789",
+      "email": "123456789@gmail.com",
+      "password": "123456789",
+      "isAdmin": false,
+      "id": "1pv5HsK"
     }
   ],
   "categories": [
@@ -212,8 +221,8 @@
   "cars": [
     {
       "id": "1",
-      "categoryId": "3",
-      "companyId": "1",
+      "categoryId": 3,
+      "companyId": 1,
       "seats": 5,
       "description": "מרצדס GLE – רכב SUV יוקרתי עם ביצועים גבוהים, סלון מפואר עם ריפוד עור, מערכת ניווט מתקדמת ומערכות בטיחות חדישות. אידיאלי לנסיעות עסקיות ואירועים.",
       "year": 2023,
@@ -221,8 +230,8 @@
     },
     {
       "id": "2",
-      "categoryId": "3",
-      "companyId": "1",
+      "categoryId": 3,
+      "companyId": 1,
       "seats": 5,
       "description": "מרצדס GLC 300 – קרוסאובר יוקרתי עם מנוע חזק, עיצוב אלגנטי ומערכת מולטימדיה MBUX. מתאים לנהיגה עירונית ובין-עירונית ברמה הגבוהה ביותר.",
       "year": 2023,
@@ -609,27 +618,6 @@
   ],
   "reviews": [
     {
-      "id": "1",
-      "carId": "1",
-      "userId": "1",
-      "description": "רכב מדהים, נסיעה שקטה ומפוארת. שירות מעולה ונוחות מירבית.",
-      "rating": 5
-    },
-    {
-      "id": "2",
-      "carId": "1",
-      "userId": "3",
-      "description": "חוויה יוקרתית אמיתית. הסלון מרשים ואיכות הנהיגה ברמה גבוהה מאוד.",
-      "rating": 5
-    },
-    {
-      "id": "3",
-      "carId": "2",
-      "userId": "2",
-      "description": "GLC 300 – ביצועים מרשימים ועיצוב נקי ויפה. מערכת הניווט מצוינת.",
-      "rating": 4
-    },
-    {
       "id": "4",
       "carId": "3",
       "userId": "4",
@@ -761,13 +749,6 @@
       "description": "ד",
       "rating": 2,
       "id": "EE0HWdI35Yg"
-    },
-    {
-      "carId": "2",
-      "userId": "wVOsA0WHS9A",
-      "description": "מהמם",
-      "rating": 2,
-      "id": "FO2hcxw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
