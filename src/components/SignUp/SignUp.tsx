@@ -1,5 +1,5 @@
 // import { type FC } from 'react';
-// import './SingUp.scss';
+// import './SignUp.scss';
 // import UserService from '../../services/user.service';
 // import { useFormik } from 'formik';
 // import { useNavigate } from 'react-router-dom';
@@ -10,9 +10,9 @@
 // import { setMessage } from '../../redux/slices/massage.slice';
 
 
-// interface SingUpProps { }
+// interface SignUpProps { }
 
-// const SingUp: FC<SingUpProps> = () => {
+// const SignUp: FC<SignUpProps> = () => {
 
 //   const navigate = useNavigate()
 //   const dispatch = useDispatch()
@@ -81,7 +81,7 @@
 //     })
 //   })
 
-//   return <div className="SingIn">
+//   return <div className="SignIn">
 //     <form onSubmit={myForm.handleSubmit}>
 
 //       <div className="form-group">
@@ -133,9 +133,9 @@
 //   </div>
 // };
 
-// export default SingUp;
+// export default SignUp;
 import { type FC } from 'react';
-import './SingUp.scss';
+import './SignUp.scss';
 import UserService from '../../services/user.service';
 import { useFormik } from 'formik';
 import { useNavigate } from 'react-router-dom';
@@ -146,9 +146,9 @@ import { useDispatch } from 'react-redux';
 import { setMessage } from '../../redux/slices/massage.slice';
 
 
-interface SingUpProps { }
+interface SignUpProps { }
 
-const SingUp: FC<SingUpProps> = () => {
+const SignUp: FC<SignUpProps> = () => {
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -218,7 +218,7 @@ const SingUp: FC<SingUpProps> = () => {
   })
 
   return (
-    <div className="SingUp" dir="rtl">
+    <div className="SignUp" dir="rtl">
       <div className="auth-container wide-container">
         <div className="auth-header">
           <h1 className="brand-title">Drive Go</h1>
@@ -284,4 +284,4 @@ const SingUp: FC<SingUpProps> = () => {
   );
 };
 
-export default SingUp;
+export default SignUp;

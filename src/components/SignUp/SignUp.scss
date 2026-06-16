@@ -1,9 +1,9 @@
 // מייבא את עיצובי הבסיס והמשתנים של דף ההתחברות כדי לשמור על קו זהה
-@import '../SingIn/SingIn.scss';
+@import '../SignIn/SignIn.scss';
 
-.SingUp {
+.SignUp {
   // יורש את תמונת הרקע והגדרות הבסיס מהקובץ הקודם
-  @extend .SingIn;
+  @extend .SignIn;
 
   .wide-container {
     max-width: 550px; // כרטיס רחב יותר כדי להכיל שדות כפולים בנוחות
@@ -57,7 +57,7 @@
 
 // התאמה למסכים קטנים (מובייל) שהשדות הכפולים ירדו שורה
 @media (max-width: 500px) {
-  .SingUp {
+  .SignUp {
     .form-row {
       flex-direction: column;
       gap: 0;

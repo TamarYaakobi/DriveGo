@@ -95,7 +95,7 @@
 //         <h3>מוכנים להתחיל את החוויה?</h3>
 //         <p>הירשמו עכשיו וקבלו גישה מיידית לצי הרכבים האקסקלוסיבי שלנו.</p>
 //         <div className="cta-actions">
-//           <button className="btn-primary-gold" onClick={() => navigate('/SingUp')}>הרשמה מהירה</button>
+//           <button className="btn-primary-gold" onClick={() => navigate('/SignUp')}>הרשמה מהירה</button>
 //           <button className="btn-secondary-outline" onClick={() => navigate('/AboutUs')}>קראו עלינו</button>
 //         </div>
 //       </section>
@@ -213,7 +213,7 @@ const Home: FC<HomeProps> = () => {
         <p>הירשמו עכשיו וקבלו גישה מיידית לצי הרכבים האקסקלוסיבי שלנו.</p>
         
         <div className="cta-actions">
-          <button className="btn-primary-gold" onClick={() => navigate('/SingUp')}>הרשמה מהירה</button>
+          <button className="btn-primary-gold" onClick={() => navigate('/SignUp')}>הרשמה מהירה</button>
           <button className="btn-secondary-outline" onClick={() => navigate('/AboutUs')}>קראו עלינו</button>
         </div>
 

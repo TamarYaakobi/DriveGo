@@ -68,8 +68,8 @@ const NavBar: FC<NavBarProps> = () => {
 >
   צור קשר
 </li>
-        <li onClick={() => navigate('/SingIn')} className='nav-link'>כניסה</li>
-        <li onClick={() => navigate('/SingUp')} className='nav-link'>הרשמה</li>
+        <li onClick={() => navigate('/SignIn')} className='nav-link'>כניסה</li>
+        <li onClick={() => navigate('/SignUp')} className='nav-link'>הרשמה</li>
         <li onClick={() => navigate('/UserDetails')} className='nav-link'>פרטים אישיים</li>
         {user?.isAdmin && (
           <li onClick={() => navigate('/AddCar')} className='nav-link'>הוסף מוצר</li>

@@ -31,7 +31,7 @@ const Cars: FC<CarsProps> = () => {
       setCategories(responseCategories || [])
 
       if (urlParams.category) {
-        const categoryId = categories?.find(cat => cat.name === urlParams.category)?.id;
+        const categoryId = responseCategories?.find(cat => cat.name === urlParams.category)?.id;
         let response = await carService.getCars(categoryId)
         setCars(response || [])
       }
@@ -43,7 +43,8 @@ const Cars: FC<CarsProps> = () => {
     fetchData();
   }, [urlParams.category])
 
-  return <div className="Cars">
+  return <div className="Cars-page">
+  <div className="Cars">
     {cars.map((i) =>
       <CarCard
         car={i}
@@ -52,6 +53,7 @@ const Cars: FC<CarsProps> = () => {
         onDelete={refreshCars}>
       </CarCard>
     )}
+    </div> 
     <Outlet />
   </div>
 };

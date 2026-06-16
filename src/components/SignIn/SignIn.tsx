@@ -1,5 +1,5 @@
 // import { useState, type FC } from 'react';
-// import './SingIn.scss';
+// import './SignIn.scss';
 // import { useFormik } from 'formik';
 // import * as yup from 'yup'
 // import UserService from '../../services/user.service';
@@ -8,11 +8,11 @@
 // import { setUser } from '../../redux/slices/user.slice';
 // import { setMessage } from '../../redux/slices/massage.slice';
 
-// interface SingInProps { }
+// interface SignInProps { }
 
-// const SingIn: FC<SingInProps> = () => {
+// const SignIn: FC<SignInProps> = () => {
 
-//   const [singUp, setSingUp] = useState(false)
+//   const [SignUp, setSignUp] = useState(false)
 //   const navigate = useNavigate()
 //   const dispatch = useDispatch()
 //   const myForm = useFormik({
@@ -39,7 +39,7 @@
 //           massage: 'המשתמש אינו קיים במערכת, נא הרשם',
 //           type: 'error'
 //         }))
-//         setSingUp(true)
+//         setSignUp(true)
 //       }
 //     },
 //     validationSchema: yup.object().shape({
@@ -48,7 +48,7 @@
 //     })
 //   })
 
-//   return <div className="SingIn">
+//   return <div className="SignIn">
 //     <form onSubmit={myForm.handleSubmit}>
 //       <div className="form-group">
 //         <label htmlFor="inputEmail">Email address</label>
@@ -62,18 +62,18 @@
 //       </div>
 //       <button type="submit" className="btn btn-primary">Submit</button>
 //     </form>
-//     {singUp &&
+//     {SignUp &&
 //       <>
-//         <button onClick={() => navigate('/SingUp')}>עבור להרשמה</button>
+//         <button onClick={() => navigate('/SignUp')}>עבור להרשמה</button>
 //       </>}
 //   </div>
 
 // };
 
-// export default SingIn;
+// export default SignIn;
 
 import { useState, type FC } from 'react';
-import './SingIn.scss';
+import './SignIn.scss';
 import { useFormik } from 'formik';
 import * as yup from 'yup'
 import UserService from '../../services/user.service';
@@ -82,11 +82,11 @@ import { useDispatch } from 'react-redux';
 import { setUser } from '../../redux/slices/user.slice';
 import { setMessage } from '../../redux/slices/massage.slice';
 
-interface SingInProps { }
+interface SignInProps { }
 
-const SingIn: FC<SingInProps> = () => {
+const SignIn: FC<SignInProps> = () => {
 
-  const [singUp, setSingUp] = useState(false)
+  const [SignUp, setSignUp] = useState(false)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const myForm = useFormik({
@@ -113,7 +113,7 @@ const SingIn: FC<SingInProps> = () => {
           massage: 'המשתמש אינו קיים במערכת, נא הרשם',
           type: 'error'
         }))
-        setSingUp(true)
+        setSignUp(true)
       }
     },
     validationSchema: yup.object().shape({
@@ -123,7 +123,7 @@ const SingIn: FC<SingInProps> = () => {
   })
 
   return (
-    <div className="SingIn" dir="rtl">
+    <div className="SignIn" dir="rtl">
       <div className="auth-container">
         <div className="auth-header">
           <h1 className="brand-title">Drive Go</h1>
@@ -161,10 +161,10 @@ const SingIn: FC<SingInProps> = () => {
           <button type="submit" className="btn btn-primary submit-gold-btn">התחבר למערכת</button>
         </form>
 
-        {singUp && (
+        {SignUp && (
           <div className="redirect-section">
             <p>האימייל לא נמצא במערכת</p>
-            <button className="switch-auth-btn" onClick={() => navigate('/SingUp')}>עבור להרשמה מהירה ←</button>
+            <button className="switch-auth-btn" onClick={() => navigate('/SignUp')}>עבור להרשמה מהירה ←</button>
           </div>
         )}
       </div>
@@ -172,4 +172,4 @@ const SingIn: FC<SingInProps> = () => {
   );
 };
 
-export default SingIn;
+export default SignIn;
