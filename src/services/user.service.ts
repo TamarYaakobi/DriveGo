@@ -36,4 +36,12 @@ export default new class UserService {
         }
     }
 
+    async updateUser(user: User): Promise<User | null> {
+        try {
+            const response = await axios.put<User>(`${this.BASE_URL}/users/${user.id}`, user)
+            return response.data
+        } catch (error) {
+            return null
+        }
+    }
 }
