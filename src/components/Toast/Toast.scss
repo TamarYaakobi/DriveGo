@@ -4,10 +4,9 @@ $error-border: rgba(255, 77, 77, 0.4);
 $success-bg: rgba(12, 26, 14, 0.9);
 $success-border: rgba(46, 204, 113, 0.4);
 
-// עטיפה שממרכזת את ההודעה בראש המסך מעל הכל
 .Toast-wrapper {
   position: fixed;
-  top: 90px; // ממוקם קצת מתחת לבר הניווט הראשי
+  top: 90px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
@@ -15,11 +14,11 @@ $success-border: rgba(46, 204, 113, 0.4);
   max-width: 420px;
   padding: 0 20px;
   box-sizing: border-box;
-  pointer-events: none; // מאפשר ללחוץ על אלמנטים מאחור אם זה רק העטיפה
+  pointer-events: none; 
 }
 
 .Toast {
-  pointer-events: auto; // מחזיר את הלחיצות לקופסה עצמה
+  pointer-events: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,7 +53,6 @@ $success-border: rgba(46, 204, 113, 0.4);
     font-weight: 500;
   }
 
-  // כפתור ה-X לסגירה
   .Toast__close-btn {
     background: none;
     border: none;
@@ -71,7 +69,6 @@ $success-border: rgba(46, 204, 113, 0.4);
     }
   }
 
-  // סטייל ייעודי לסוג שגיאה (error)
   &--error {
     background-color: $error-bg;
     border: 1px solid $error-border;
@@ -89,8 +86,6 @@ $success-border: rgba(46, 204, 113, 0.4);
     }
   }
 
-  // סטייל ייעודי לסוג הצלחה (sucsses / success)
-  // כולל תמיכה בשני האיוותים כדי למנוע תקלות
   &--sucsses, &--success {
     background-color: $success-bg;
     border: 1px solid $success-border;
@@ -109,7 +104,6 @@ $success-border: rgba(46, 204, 113, 0.4);
   }
 }
 
-// אנימציית כניסה מרהיבה מלמעלה עם קפיצה עדינה (Bounce)
 @keyframes slideDownFade {
   from {
     opacity: 0;

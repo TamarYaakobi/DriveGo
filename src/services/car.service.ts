@@ -15,17 +15,6 @@ export default new class CarService {
         }
     }
 
-    // async getCars(categoryId?: string): Promise<Car[] | null> {
-    //     try {
-    //         const url = categoryId
-    //             ? `${this.BASE_URL}/cars?categoryId=${categoryId}`
-    //             : `${this.BASE_URL}/cars`;
-    //         return (await axios.get<Car[]>(url)).data;
-    //     } catch (error) {
-    //         return null;
-    //     }
-    // }
-
     async getCars(categoryId?: string, page: number = 1, limit: number = 20): Promise<Car[] | null> {
         try {
             let url = `${this.BASE_URL}/cars?_page=${page}&_limit=${limit}`

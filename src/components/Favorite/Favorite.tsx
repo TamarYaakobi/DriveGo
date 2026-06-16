@@ -1,19 +1,3 @@
-// import type { FC } from 'react';
-// import './Favorite.scss';
-// import { useSelector } from 'react-redux';
-// import type { Car } from '../../models/car.model';
-
-// interface FavoriteProps {}
-
-// const Favorite: FC<FavoriteProps> = () => {
-//   const favoriteCar = useSelector((state: any) => state.favorite.favoriteCar)
-
-//   return <div className="Favorite">
-//     Favorite Component
-//   </div>
-// }
-
-// export default Favorite;
 import type { FC } from 'react';
 import './Favorite.scss';
 import { useSelector } from 'react-redux';

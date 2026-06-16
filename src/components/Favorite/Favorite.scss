@@ -1,4 +1,3 @@
-// ייבוא אוטומטי של הגריד של הרכבים כדי לשמור על עיצוב אחיד
 @import '../Cars/Cars.scss'; 
 
 $bg-dark: #0f0f11;
@@ -14,7 +13,6 @@ $text-muted: #aaaaaa;
   flex-direction: column;
   align-items: center;
 
-  // עיצוב למצב שאין רכבים מועדפים (Empty State)
   .empty-favorites {
     margin-top: 60px;
     text-align: center;
@@ -51,11 +49,10 @@ $text-muted: #aaaaaa;
     }
   }
 
-  // במידה ויש רכבים, הם יתפרסו על פני כל הרוחב הזמין לפי הגריד של Cars
   .Cars {
     width: 100%;
     max-width: 1400px;
-    padding: 0; // מאפסים את ה-padding הפנימי שייבאנו מ-Cars כי הכל עטוף ב-Favorite כבר
+    padding: 0; 
   }
 }
 
