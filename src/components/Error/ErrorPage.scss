@@ -1,0 +1,111 @@
+$bg-dark-trans: rgba(10, 10, 12, 0.8);
+$gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+$text-light: #ffffff;
+$text-muted: #cccccc;
+
+.Error {
+  // רקע דרמטי של רכב ספורט יוקרתי בלילה המכסה את כל המסך
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(15, 15, 17, 0.95)), 
+              url('https://images.pexels.com/photos/3856027/pexels-photo-3856027.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover no-repeat fixed;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+
+  .error-overlay {
+    background: $bg-dark-trans;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 24px;
+    padding: 60px 40px;
+    max-width: 550px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.05);
+    animation: fadeInError 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    .error-code {
+      font-size: 7rem;
+      font-weight: 900;
+      margin: 0;
+      line-height: 1;
+      background: $gold-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -2px;
+      text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .error-title {
+      font-size: 2rem;
+      color: $text-light;
+      margin: 20px 0 15px;
+      font-weight: 700;
+    }
+
+    .error-message {
+      color: $text-muted;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 0 0 35px 0;
+    }
+
+    .back-home-btn {
+      background: $gold-gradient;
+      border: none;
+      color: #000000;
+      padding: 14px 40px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 5px 20px rgba(212, 175, 55, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
+      }
+
+      &:active {
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+@keyframes fadeInError {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+// התאמה למסכי מובייל קטנים
+@media (max-width: 480px) {
+  .Error {
+    .error-overlay {
+      padding: 40px 20px;
+      
+      .error-code {
+        font-size: 5rem;
+      }
+      
+      .error-title {
+        font-size: 1.6rem;
+      }
+      
+      .error-message {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}

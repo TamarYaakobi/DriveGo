@@ -9,7 +9,7 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import * as yup from 'yup'
 import { useFormik } from 'formik';
-import { setMessage } from '../../redux/slices/massage.slice';
+import { setMessage } from '../../redux/slices/message.slice';
 
 interface CarDetailsProps {
 }
@@ -47,7 +47,7 @@ const CarDetails: FC<CarDetailsProps> = () => {
       }
       else {
         dispatch(setMessage({
-          massage: 'אינך יכול להוסיף חוות דעת נוספת ',
+          message: 'אינך יכול להוסיף חוות דעת נוספת ',
           type: 'error'
         }))
       }
@@ -85,7 +85,7 @@ const CarDetails: FC<CarDetailsProps> = () => {
     const responseReviews = await carService.deleteReview(reviewId)
     if (!responseReviews) {
       dispatch(setMessage({
-        massage: ' חוות הדעת לא נמחקה ',
+        message: ' חוות הדעת לא נמחקה ',
         type: 'error'
       }))
     }

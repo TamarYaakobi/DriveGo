@@ -1,77 +1,3 @@
-// import { useState, type FC } from 'react';
-// import './SignIn.scss';
-// import { useFormik } from 'formik';
-// import * as yup from 'yup'
-// import UserService from '../../services/user.service';
-// import { useNavigate } from 'react-router';
-// import { useDispatch } from 'react-redux';
-// import { setUser } from '../../redux/slices/user.slice';
-// import { setMessage } from '../../redux/slices/massage.slice';
-
-// interface SignInProps { }
-
-// const SignIn: FC<SignInProps> = () => {
-
-//   const [SignUp, setSignUp] = useState(false)
-//   const navigate = useNavigate()
-//   const dispatch = useDispatch()
-//   const myForm = useFormik({
-//     initialValues: {
-//       email: '',
-//       password: ''
-//     },
-//     onSubmit: async (value: any) => {
-//       let user = await UserService.getUserByEmail(value.email)
-//       if (user != null) {
-//         if (user.password == value.password) {
-//           dispatch(setUser(user))
-//           navigate('/')
-//         }
-//         else {
-//           dispatch(setMessage({
-//             massage: 'הסיסמה שגויה',
-//             type: 'error'
-//           }))
-//         }
-//       }
-//       else {
-//         dispatch(setMessage({
-//           massage: 'המשתמש אינו קיים במערכת, נא הרשם',
-//           type: 'error'
-//         }))
-//         setSignUp(true)
-//       }
-//     },
-//     validationSchema: yup.object().shape({
-//       email: yup.string().email().required("שדה חובה"),
-//       password: yup.string().min(8, 'הסיסמה חייבת להכיל לפחות 8 תווים').required('שדה חובה')
-//     })
-//   })
-
-//   return <div className="SignIn">
-//     <form onSubmit={myForm.handleSubmit}>
-//       <div className="form-group">
-//         <label htmlFor="inputEmail">Email address</label>
-//         <input onChange={myForm.handleChange} type="email" className="form-control" name="email" id="inputEmail" aria-describedby="emailHelp" />
-//         {myForm.errors.email && <p>{myForm.errors.email as string}</p>}
-//       </div>
-//       <div className="form-group">
-//         <label htmlFor="inputPassword">Password</label>
-//         <input onChange={myForm.handleChange} type="password" className="form-control" name="password" id="inputPassword" />
-//         {myForm.errors.password && <p>{myForm.errors.password as string}</p>}
-//       </div>
-//       <button type="submit" className="btn btn-primary">Submit</button>
-//     </form>
-//     {SignUp &&
-//       <>
-//         <button onClick={() => navigate('/SignUp')}>עבור להרשמה</button>
-//       </>}
-//   </div>
-
-// };
-
-// export default SignIn;
-
 import { useState, type FC } from 'react';
 import './SignIn.scss';
 import { useFormik } from 'formik';
@@ -80,7 +6,7 @@ import UserService from '../../services/user.service';
 import { useNavigate } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../redux/slices/user.slice';
-import { setMessage } from '../../redux/slices/massage.slice';
+import { setMessage } from '../../redux/slices/message.slice';
 
 interface SignInProps { }
 
@@ -103,14 +29,14 @@ const SignIn: FC<SignInProps> = () => {
         }
         else {
           dispatch(setMessage({
-            massage: 'הסיסמה שגויה',
+            message: 'הסיסמה שגויה',
             type: 'error'
           }))
         }
       }
       else {
         dispatch(setMessage({
-          massage: 'המשתמש אינו קיים במערכת, נא הרשם',
+          message: 'המשתמש אינו קיים במערכת, נא הרשם',
           type: 'error'
         }))
         setSignUp(true)
@@ -134,12 +60,12 @@ const SignIn: FC<SignInProps> = () => {
         <form onSubmit={myForm.handleSubmit}>
           <div className="form-group">
             <label htmlFor="inputEmail">כתובת אימייל</label>
-            <input 
-              onChange={myForm.handleChange} 
-              type="email" 
-              className="form-control" 
-              name="email" 
-              id="inputEmail" 
+            <input
+              onChange={myForm.handleChange}
+              type="email"
+              className="form-control"
+              name="email"
+              id="inputEmail"
               placeholder="הקש את האימייל שלך"
             />
             {myForm.errors.email && <p className="error-msg">{myForm.errors.email as string}</p>}
@@ -147,12 +73,12 @@ const SignIn: FC<SignInProps> = () => {
 
           <div className="form-group">
             <label htmlFor="inputPassword">סיסמה סודית</label>
-            <input 
-              onChange={myForm.handleChange} 
-              type="password" 
-              className="form-control" 
-              name="password" 
-              id="inputPassword" 
+            <input
+              onChange={myForm.handleChange}
+              type="password"
+              className="form-control"
+              name="password"
+              id="inputPassword"
               placeholder="הקש את הסיסמה"
             />
             {myForm.errors.password && <p className="error-msg">{myForm.errors.password as string}</p>}

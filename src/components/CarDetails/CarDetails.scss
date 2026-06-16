@@ -16,7 +16,6 @@ $text-muted: #aaaaaa;
   color: $text-light;
   box-sizing: border-box;
 
-  // תמונת הרכב הראשית הגדולה
   img {
     width: 100%;
     max-height: 500px;
@@ -28,10 +27,9 @@ $text-muted: #aaaaaa;
   }
 
   br {
-    display: none; // מעיפים את ה-br לטובת מרווחי CSS מבוקשים
+    display: none;
   }
 
-  // בלוק המפרט הטכני ותיאור הרכב
   small {
     display: block;
     font-size: 1.05rem;
@@ -44,7 +42,6 @@ $text-muted: #aaaaaa;
     &:nth-of-type(3)::before { content: " מותג / חברה: "; font-weight: bold; color: $gold-primary; }
     &:nth-of-type(4)::before { content: " קטגוריית סיור: "; font-weight: bold; color: $gold-primary; }
     
-    // התיאור החופשי של הרכב (השורה החמישית)
     &:nth-of-type(5) {
       margin-top: 25px;
       font-size: 1.2rem;
@@ -60,7 +57,6 @@ $text-muted: #aaaaaa;
     }
   }
 
-  // מדד דירוג ממוצע בכוכבים
   .average-rating {
     background: #1c1c22;
     padding: 20px;
@@ -83,7 +79,6 @@ $text-muted: #aaaaaa;
     }
   }
 
-  // כפתור הפלוס להוספת חוות דעת
   button:first-of-type:not([type="submit"]) {
     background: none;
     border: 2px dashed rgba(212, 175, 55, 0.4);
@@ -103,7 +98,6 @@ $text-muted: #aaaaaa;
     }
   }
 
-  // בלוק של כל תגובת/חוות דעת לקוח
   .rating {
     background: $bg-card;
     border: 1px solid rgba(255, 255, 255, 0.04);
@@ -118,7 +112,6 @@ $text-muted: #aaaaaa;
       flex-direction: column;
       gap: 6px;
 
-      // מספר הדירוג (הכוכבים או הציון)
       .rating__score:first-of-type {
         font-size: 1.2rem;
         font-weight: 700;
@@ -129,7 +122,6 @@ $text-muted: #aaaaaa;
         }
       }
 
-      // שם המשתמש שרשם
       .rating__reviews {
         font-size: 0.95rem;
         font-weight: 600;
@@ -139,7 +131,6 @@ $text-muted: #aaaaaa;
         margin-bottom: 5px;
       }
 
-      // תוכן חוות הדעת עצמה
       .rating__score:last-of-type {
         font-size: 1rem;
         color: $text-muted;
@@ -147,7 +138,6 @@ $text-muted: #aaaaaa;
       }
     }
 
-    // כפתור פח זבל למחיקת תגובה של המשתמש הנוכחי
     button {
       position: absolute;
       top: 20px;
@@ -167,7 +157,6 @@ $text-muted: #aaaaaa;
     }
   }
 
-  // טופס הוספת חוות דעת חדשה
   form {
     background: #1c1c22;
     padding: 30px;

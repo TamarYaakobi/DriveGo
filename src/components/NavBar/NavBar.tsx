@@ -48,32 +48,30 @@ const NavBar: FC<NavBarProps> = () => {
             </ul>
           )}
         </li>
-        {/* <li onClick={() => { }} className='nav-link'>צור קשר</li> */}
-        <li 
-  onClick={() => {
-    // אם המשתמש כבר בדף הבית, נגלול בצורה חלקה
-    const element = document.getElementById('contact-section');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      // אם הוא בדף אחר, קודם נעביר אותו לדף הבית
-      navigate('/');
-      // אופציונלי: לתת לזה חצי שנייה ואז לגלול
-      setTimeout(() => {
-        document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    }
-  }} 
-  className='nav-link'
->
-  צור קשר
-</li>
+        <li
+          onClick={() => {
+            const element = document.getElementById('contact-section');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            } else {
+              navigate('/');
+              setTimeout(() => {
+                document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' });
+              }, 100);
+            }
+          }}
+          className='nav-link'
+        >
+          צור קשר
+        </li>
         <li onClick={() => navigate('/SignIn')} className='nav-link'>כניסה</li>
         <li onClick={() => navigate('/SignUp')} className='nav-link'>הרשמה</li>
         <li onClick={() => navigate('/UserDetails')} className='nav-link'>פרטים אישיים</li>
         {user?.isAdmin && (
           <li onClick={() => navigate('/AddCar')} className='nav-link'>הוסף מוצר</li>
-        )}       <li className='nav-link'>{user ? user.firstName : 'אורח'}</li>
+        )}
+        <li className='nav-link' onClick={() => navigate('/Favorite')}>❤️</li>
+        <li className='nav-link'>{user ? user.firstName : 'אורח'}</li>
       </ul>
     </nav>
   </div>

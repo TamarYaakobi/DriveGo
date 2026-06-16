@@ -26,7 +26,6 @@ $text-muted: #aaaaaa;
     }
   }
 
-  // תמונת הרכב עם אפקט זום קל ב-Hover
   img {
     width: 100%;
     height: 220px;
@@ -35,12 +34,11 @@ $text-muted: #aaaaaa;
     border-bottom: 2px solid rgba(212, 175, 55, 0.1);
   }
 
-  // ביטול שורות ה-br הריקות ויצירת מרווחים נקיים עם CSS
   br {
     display: none;
   }
 
-  // עיצוב שורות המפרט (הטקסטים הקטנים)
+
   small {
     display: block;
     color: $text-muted;
@@ -58,7 +56,6 @@ $text-muted: #aaaaaa;
     }
   }
 
-  // כפתור מעבר לפרטים
   button:not(.admin-delete-btn) {
     background: $gold-gradient;
     border: none;
@@ -78,10 +75,8 @@ $text-muted: #aaaaaa;
     }
   }
 
-  // כפתור מחיקה של מנהל (פח זבל)
   button:has(img) , button:contains('🗑️'), &[onClick*="deleteCar"] , button {
     & {
-      // עיצוב ייעודי לכפתור המחיקה בפינה
       &:nth-of-type(2) {
         position: absolute;
         top: 15px;

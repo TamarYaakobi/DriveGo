@@ -1,4 +1,3 @@
-// הגדרת משתני צבע לסטייל יוקרתי
 $bg-dark: #0f0f11;
 $bg-card: #1a1a1e;
 $gold-primary: #d4af37;
@@ -12,7 +11,6 @@ $text-muted: #aaaaaa;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
 
-  // --- Hero Section ---
   .hero-section {
     position: relative;
     height: 90vh;
@@ -108,7 +106,6 @@ $text-muted: #aaaaaa;
     }
   }
 
-  // --- רכיבים משותפים ---
   .section-header {
     text-align: center;
     margin-bottom: 50px;
@@ -127,7 +124,6 @@ $text-muted: #aaaaaa;
     }
   }
 
-  // --- Features Section ---
   .features-section {
     padding: 80px 20px;
 
@@ -171,7 +167,6 @@ $text-muted: #aaaaaa;
     }
   }
 
-  // --- Categories Section ---
   .categories-section {
     padding: 80px 20px;
     background-color: rgba(255, 255, 255, 0.02);
@@ -198,7 +193,7 @@ $text-muted: #aaaaaa;
 
         .category-overlay {
           background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
-          
+
           .discover-more {
             color: $gold-primary;
             transform: translateX(-5px);
@@ -223,7 +218,7 @@ $text-muted: #aaaaaa;
           font-size: 1.8rem;
           font-weight: 700;
           margin-bottom: 5px;
-          text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
 
         .discover-more {
@@ -235,13 +230,12 @@ $text-muted: #aaaaaa;
     }
   }
 
-  // --- Footer CTA ---
   .footer-cta {
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(rgba(15, 15, 17, 0.8), rgba(15, 15, 17, 1)), 
-                url('https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover;
-    
+    background: linear-gradient(rgba(15, 15, 17, 0.8), rgba(15, 15, 17, 1)),
+      url('https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover;
+
     h3 {
       font-size: 2.5rem;
       font-weight: 700;
@@ -296,7 +290,6 @@ $text-muted: #aaaaaa;
   }
 }
 
-// להוסיף בתוך הבלוק של .footer-cta בתחתית שלו:
 .footer-bottom-links {
   margin-top: 60px;
   display: flex;
@@ -311,7 +304,6 @@ $text-muted: #aaaaaa;
     opacity: 0.5;
   }
 
-  // מיכל ה-Tooltip
   .tooltip-container {
     position: relative;
     display: inline-block;
@@ -328,7 +320,6 @@ $text-muted: #aaaaaa;
       }
     }
 
-    // ההודעה הצצה הנסתרת כברירת מחדל
     .custom-tooltip {
       visibility: hidden;
       opacity: 0;
@@ -341,13 +332,12 @@ $text-muted: #aaaaaa;
       padding: 15px;
       position: absolute;
       z-index: 10;
-      bottom: 150%; // פותח את ההודעה כלפי מעלה
+      bottom: 150%;
       left: 50%;
       transform: translateX(-50%);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
       transition: opacity 0.3s ease, transform 0.3s ease;
-      
-      // חץ קטן בתחתית ההודעה הצצה
+
       &:after {
         content: "";
         position: absolute;
@@ -371,7 +361,6 @@ $text-muted: #aaaaaa;
       }
     }
 
-    // כשעומדים עם העכבר - ההודעה מופיעה בצורה חלקה
     &:hover {
       .custom-tooltip {
         visibility: visible;
@@ -381,12 +370,13 @@ $text-muted: #aaaaaa;
     }
   }
 }
-// אנמציות קטנות להוספת יוקרה ותנועה
+
 @keyframes fadeInDown {
   from {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

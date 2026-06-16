@@ -2,7 +2,7 @@ import { type FC } from 'react';
 import './UserDetails.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import type { User } from '../../models/user.model';
-import { setMessage } from '../../redux/slices/massage.slice';
+import { setMessage } from '../../redux/slices/message.slice';
 import { setUser } from '../../redux/slices/user.slice';
 import { useFormik } from 'formik';
 import * as yup from 'yup'
@@ -17,7 +17,7 @@ const UserDetails: FC<UserDetailsProps> = () => {
 
   const user = useSelector((state: User) => state.user.user)
   const myForm = useFormik({
-    enableReinitialize: true, // ← חשוב! כדי שיטען את ערכי היוזר כשמגיעים
+    enableReinitialize: true,
     initialValues: {
       firstName: user?.firstName || '',
       lastName: user?.lastName || '',
@@ -37,10 +37,10 @@ const UserDetails: FC<UserDetailsProps> = () => {
 
       const result = await UserService.updateUser(updatedUser)
       if (!result) {
-        dispatch(setMessage({ massage: 'העדכון נכשל', type: 'error' }))
+        dispatch(setMessage({ message: 'העדכון נכשל', type: 'error' }))
       } else {
         dispatch(setUser(result))
-        dispatch(setMessage({ massage: 'הפרטים עודכנו בהצלחה', type: 'sucsses' }))
+        dispatch(setMessage({ message: 'הפרטים עודכנו בהצלחה', type: 'sucsses' }))
       }
     },
     validationSchema: yup.object().shape({

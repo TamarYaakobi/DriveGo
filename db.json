@@ -125,6 +125,24 @@
       "password": "סיס5555555",
       "isAdmin": false,
       "id": "wVOsA0WHS9A"
+    },
+    {
+      "firstName": "רחל",
+      "lastName": "לוי",
+      "idNumber": "222222222",
+      "email": "853@gmail.com",
+      "password": "רחללוי111",
+      "isAdmin": false,
+      "id": "L3-Dz3D"
+    },
+    {
+      "firstName": "ללי",
+      "lastName": "חחח",
+      "idNumber": "888888888",
+      "email": "85185285@gmail.com",
+      "password": "ddddddddddddddddddd",
+      "isAdmin": false,
+      "id": "SJ2Y-u2"
     }
   ],
   "categories": [
@@ -578,6 +596,15 @@
       "description": "יגואר XJ6 סדרה 3 1985 – הסדאן הבריטי האלגנטי ביותר שנוצר. מנוע 6 קוצים 4.2 ליטר, ריפוד עור בריטי מקורי ותחושת נסיעה קלאסית שאין כמוה.",
       "year": 1985,
       "imageUrl": "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800"
+    },
+    {
+      "categoryId": "2",
+      "companyId": "1",
+      "seats": 4,
+      "description": "רכב אספנות חתיך",
+      "year": 1955,
+      "imageUrl": "https://www.luxurycarrental.co.il/upload/%D7%90%D7%A1%D7%A4%D7%A0%D7%95%D7%AA%20%D7%9C%D7%97%D7%AA%D7%95%D7%A0%D7%94/%D7%9E%D7%97%D7%99%D7%A8%D7%99%20%D7%A8%D7%9B%D7%91%D7%99%20%D7%90%D7%A1%D7%A4%D7%A0%D7%95%D7%AA.jpeg",
+      "id": "9Hv2KY-"
     }
   ],
   "reviews": [
@@ -738,23 +765,9 @@
     {
       "carId": "2",
       "userId": "wVOsA0WHS9A",
-      "description": "חתיך",
-      "rating": 5,
-      "id": "ZLxsvm5VSwI"
-    },
-    {
-      "carId": "222",
-      "userId": "wVOsA0WHS9A",
-      "description": "וואו",
-      "rating": 3,
-      "id": "uQAk_ty3-fk"
-    },
-    {
-      "carId": "2",
-      "userId": "wVOsA0WHS9A",
-      "description": "חתיך",
-      "rating": 3,
-      "id": "jE9zijm9F2g"
+      "description": "מהמם",
+      "rating": 2,
+      "id": "FO2hcxw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

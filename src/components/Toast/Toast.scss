@@ -1,0 +1,122 @@
+$gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+$error-bg: rgba(26, 12, 12, 0.9);
+$error-border: rgba(255, 77, 77, 0.4);
+$success-bg: rgba(12, 26, 14, 0.9);
+$success-border: rgba(46, 204, 113, 0.4);
+
+// עטיפה שממרכזת את ההודעה בראש המסך מעל הכל
+.Toast-wrapper {
+  position: fixed;
+  top: 90px; // ממוקם קצת מתחת לבר הניווט הראשי
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 100%;
+  max-width: 420px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  pointer-events: none; // מאפשר ללחוץ על אלמנטים מאחור אם זה רק העטיפה
+}
+
+.Toast {
+  pointer-events: auto; // מחזיר את הלחיצות לקופסה עצמה
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: slideDownFade 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s ease;
+
+  .Toast__content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .Toast__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+
+  .Toast__text {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  // כפתור ה-X לסגירה
+  .Toast__close-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 0 0 5px;
+    transition: color 0.2s, transform 0.2s;
+
+    &:hover {
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+  }
+
+  // סטייל ייעודי לסוג שגיאה (error)
+  &--error {
+    background-color: $error-bg;
+    border: 1px solid $error-border;
+    box-shadow: 0 10px 25px rgba(255, 77, 77, 0.1), 0 4px 12px rgba(0, 0, 0, 0.5);
+
+    .Toast__icon {
+      background-color: rgba(255, 77, 77, 0.2);
+      color: #ff4d4d;
+      border: 1px solid rgba(255, 77, 77, 0.4);
+    }
+    
+    .Toast__text {
+      border-right: 2px solid #ff4d4d;
+      padding-right: 10px;
+    }
+  }
+
+  // סטייל ייעודי לסוג הצלחה (sucsses / success)
+  // כולל תמיכה בשני האיוותים כדי למנוע תקלות
+  &--sucsses, &--success {
+    background-color: $success-bg;
+    border: 1px solid $success-border;
+    box-shadow: 0 10px 25px rgba(46, 204, 113, 0.1), 0 4px 12px rgba(0, 0, 0, 0.5);
+
+    .Toast__icon {
+      background-color: rgba(46, 204, 113, 0.2);
+      color: #2ecc71;
+      border: 1px solid rgba(46, 204, 113, 0.4);
+    }
+
+    .Toast__text {
+      border-right: 2px solid #2ecc71;
+      padding-right: 10px;
+    }
+  }
+}
+
+// אנימציית כניסה מרהיבה מלמעלה עם קפיצה עדינה (Bounce)
+@keyframes slideDownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

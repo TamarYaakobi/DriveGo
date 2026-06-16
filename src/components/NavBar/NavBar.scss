@@ -1,65 +1,18 @@
-// // .NavBar {
-//     .nav-ul {
-//         display: flex;
-//         list-style: none;
-//         margin: 0;
-//         padding: 0;
-//         gap: 2px;
-//     }
-
-//     .nav-bar {
-//         position: absolute;
-//         top: 0;
-//         right: 0;
-//         left: 0;
-//         z-index: 100;
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-//         height: 56px;
-//         padding: 0 28px;
-//         background: transparent;
-//         font-family: 'Heebo', sans-serif;
-//     }
-
-//     .nav-link {
-//         color: #c9a84c;
-//         font-size: 14px;
-//         text-decoration: none;
-//         padding: 6px 14px;
-//         display: block;
-//         position: relative;
-//     }
-
-    
-// // }
-//     .dropdown {
-//         position: absolute;
-//         top: 100%;
-//         right: 0;
-//         background: white;
-//         list-style: none;
-//         padding: 8px 0;
-//         margin: 0;
-//         z-index: 999;
-//         min-width: 150px;
-//     }
-// משתני צבע תואמים לרוח האתר
-$nav-bg: rgba(15, 15, 17, 0.85); // שחור אלגנטי עם שקיפות קלה
+$nav-bg: rgba(15, 15, 17, 0.85);
 $gold-primary: #d4af37;
 $gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
 $text-light: #ffffff;
 $text-muted: #aaaaaa;
 
 .NavBar {
-  position: fixed; // נשאר קבוע למעלה בזמן גלילה
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   background-color: $nav-bg;
-  backdrop-filter: blur(10px); // אפקט טשטוש זכוכית יוקרתי
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15); // קו זהב עדין מאוד בתחתית
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 
   .nav-bar {
@@ -68,7 +21,7 @@ $text-muted: #aaaaaa;
     padding: 15px 30px;
     display: flex;
     align-items: center;
-    justify-content: space-between; // שומר על מרווחים נכונים
+    justify-content: space-between;
   }
 
   .nav-ul {
@@ -77,10 +30,9 @@ $text-muted: #aaaaaa;
     padding: 0;
     display: flex;
     align-items: center;
-    gap: 25px; // מרווח שווה בין הלינקים
+    gap: 25px;
     width: 100%;
-    
-    // דוחף את שם המשתמש/אורח לצד שמאל של המסך (בגלל שהכיוון הוא RTL)
+
     li:last-child {
       margin-right: auto;
       font-weight: 600;
@@ -100,7 +52,6 @@ $text-muted: #aaaaaa;
     transition: color 0.3s ease;
     white-space: nowrap;
 
-    // אפקט קו תחתון מוזהב שמתרחב בצורה חלקה ב-Hover
     &:after {
       content: '';
       position: absolute;
@@ -114,14 +65,13 @@ $text-muted: #aaaaaa;
 
     &:hover {
       color: $gold-primary;
-      
+
       &:after {
         width: 100%;
       }
     }
   }
 
-  // עיצוב תפריט הקטגוריות הנפתח (Dropdown)
   .dropdown {
     position: absolute;
     top: 100%;
@@ -151,9 +101,8 @@ $text-muted: #aaaaaa;
   }
 }
 
-// התאמה קלה ל-Home כדי שלא ייכנס מתחת ל-NavBar הקבוע
 .Home {
-  padding-top: 70px; // בגובה ה-NavBar כדי שהתוכן לא יתחבא תחתיו
+  padding-top: 70px;
 }
 
 @keyframes fadeInDropdown {
@@ -161,6 +110,7 @@ $text-muted: #aaaaaa;
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

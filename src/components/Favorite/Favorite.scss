@@ -1,0 +1,82 @@
+// ייבוא אוטומטי של הגריד של הרכבים כדי לשמור על עיצוב אחיד
+@import '../Cars/Cars.scss'; 
+
+$bg-dark: #0f0f11;
+$gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+$text-muted: #aaaaaa;
+
+.Favorite {
+  background-color: $bg-dark;
+  min-height: 100vh;
+  padding: 120px 40px 60px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // עיצוב למצב שאין רכבים מועדפים (Empty State)
+  .empty-favorites {
+    margin-top: 60px;
+    text-align: center;
+    max-width: 450px;
+    padding: 40px;
+    background: #16161a;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    animation: fadeInFavs 0.5s ease-out;
+
+    .heart-icon {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      background: $gold-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0px 4px 8px rgba(212, 55, 55, 0.2));
+      display: inline-block;
+    }
+
+    h3 {
+      color: #ffffff;
+      font-size: 1.4rem;
+      margin: 0 0 12px 0;
+      font-weight: 700;
+    }
+
+    p {
+      color: $text-muted;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  // במידה ויש רכבים, הם יתפרסו על פני כל הרוחב הזמין לפי הגריד של Cars
+  .Cars {
+    width: 100%;
+    max-width: 1400px;
+    padding: 0; // מאפסים את ה-padding הפנימי שייבאנו מ-Cars כי הכל עטוף ב-Favorite כבר
+  }
+}
+
+@keyframes fadeInFavs {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .Favorite {
+    padding: 100px 20px 40px;
+    
+    .empty-favorites {
+      padding: 30px 20px;
+      margin-top: 30px;
+    }
+  }
+}

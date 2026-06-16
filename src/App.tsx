@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import './App.scss'
 import SignIn from './components/SignIn/SignIn'
 import { Route, Routes, useLocation } from 'react-router'
@@ -10,19 +10,23 @@ import AboutUs from './components/AboutUs/AboutUs'
 import NavBar from './components/NavBar/NavBar'
 import CarDetails from './components/CarDetails/CarDetails'
 import UserDetails from './components/UserDetails/UserDetails'
-import AddCar from './components/AddCar/AddCar'
+import ErrorPage from './components/Error/ErrorPage'
+import Toast from './components/Toast/Toast'
+import Favorite from './components/Favorite/Favorite'
 
 function App() {
-  
+
   const location = useLocation()
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [location.pathname])
+  const AddCarLazy = React.lazy(() => import('./components/AddCar/AddCar'))
 
   return (
     <>
-      <NavBar></NavBar >
+      <NavBar />
+      <Toast />
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='SignIn' element={<SignIn></SignIn>}></Route>
@@ -32,8 +36,10 @@ function App() {
         </Route>
         <Route path='Cars/:category/:id' element={<CarDetails></CarDetails>}></Route>
         <Route path='AboutUs' element={<AboutUs></AboutUs>}></Route>
-        <Route path='AddCar' element={<AddCar></AddCar>}></Route>
+        <Route path='AddCar' element={<Suspense><AddCarLazy></AddCarLazy></Suspense>}></Route>
         <Route path='UserDetails' element={<UserDetails></UserDetails>}></Route>
+        <Route path='Favorite' element={<Favorite></Favorite>}></Route>
+        <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
       </Routes>
     </>
   )

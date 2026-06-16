@@ -1,15 +1,12 @@
-// מייבא את עיצובי הבסיס והמשתנים של דף ההתחברות כדי לשמור על קו זהה
 @import '../SignIn/SignIn.scss';
 
 .SignUp {
-  // יורש את תמונת הרקע והגדרות הבסיס מהקובץ הקודם
   @extend .SignIn;
 
   .wide-container {
-    max-width: 550px; // כרטיס רחב יותר כדי להכיל שדות כפולים בנוחות
+    max-width: 550px;
   }
 
-  // סידור שם פרטי ומשפחה זה לצד זה
   .form-row {
     display: flex;
     gap: 15px;
@@ -20,7 +17,6 @@
     }
   }
 
-  // עיצוב יפה לתיבת הסימון של המנהל
   .admin-checkbox-group {
     margin: 20px 0;
 
@@ -44,10 +40,9 @@
     }
   }
 
-  // הדגשה אינפוט למנהל
   .admin-field {
     animation: fadeInForm 0.3s ease-out;
-    
+
     .admin-input {
       border-color: rgba(212, 175, 55, 0.4);
       background: rgba(212, 175, 55, 0.03);
@@ -55,7 +50,6 @@
   }
 }
 
-// התאמה למסכים קטנים (מובייל) שהשדות הכפולים ירדו שורה
 @media (max-width: 500px) {
   .SignUp {
     .form-row {
