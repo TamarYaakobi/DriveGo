@@ -142,15 +142,15 @@ const CarDetails: FC<CarDetailsProps> = ({ initialLike }: CarDetailsProps) => {
   return <div className="CarDetails">
     <img src={car.imageUrl} alt="Car"></img>
     <br></br>
-    <small>מס מקומות: {car.seats}</small>
+    <small>{car.seats}</small>
     <br></br>
-    <small>שנת יצור: {car.year}</small>
+    <small>{car.year}</small>
     <br></br>
-    <small> {company} :חברה</small>
+    <small> {company}</small>
     <br></br>
-    <small>קטגוריה: {category.name} </small>
+    <small>{category.name} </small>
     <br></br>
-    <small> {car.description}</small>
+    <small>{car.description}</small>
     <br></br>
     <br></br>
 

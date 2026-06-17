@@ -112,17 +112,26 @@ const Home: FC<HomeProps> = () => {
         </div>
 
         <div className="footer-bottom-links">
-          <div className="tooltip-container">
-            <span className="tooltip-trigger">📞 צור קשר</span>
-            <div className="custom-tooltip">
-              <p>📬 מייל: info@drivego.co.il</p>
-              <p>📱 טלפון: 050-1234567</p>
-              <p>📍 שעות פעילות: 09:00 - 18:00</p>
+          
+          {/* בלוק פרטי קשר יוקרתי - גלוי ישירות בדף */}
+          <div className="visible-contact-info">
+            <div className="contact-item">
+              <span className="contact-icon">📞</span>
+              <span className="contact-text">050-1234567</span>
+            </div>
+            <div className="contact-item">
+              <span className="contact-icon">📬</span>
+              <span className="contact-text">info@drivego.co.il</span>
+            </div>
+            <div className="contact-item">
+              <span className="contact-icon">📍</span>
+              <span className="contact-text">א׳-ה׳ 09:00 - 18:00</span>
             </div>
           </div>
 
           <span className="link-separator">|</span>
 
+          {/* תנאי שימוש - נשאר בתוך Tooltip אלגנטי */}
           <div className="tooltip-container">
             <span className="tooltip-trigger">📜 תנאי שימוש</span>
             <div className="custom-tooltip wide-tooltip">
@@ -131,6 +140,7 @@ const Home: FC<HomeProps> = () => {
               <p>• אישור סופי של ההזמנה כפוף לחתימה על חוזה השכירות הדיגיטלי.</p>
             </div>
           </div>
+
         </div>
       </section>
     </div>

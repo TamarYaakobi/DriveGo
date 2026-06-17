@@ -305,28 +305,78 @@ $text-muted: #aaaaaa;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 30px; // הגדלנו את המרווח בין קבוצות המידע לאיזון
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 20px;
+  padding-top: 25px;
+  flex-wrap: wrap;
 
   .link-separator {
     color: $text-muted;
-    opacity: 0.5;
+    opacity: 0.3;
+    font-size: 1.2rem;
+    
+    @media (max-width: 768px) {
+      display: none; // מסתיר את המפריד במסכים קטנים כדי לאפשר קריסה נקייה לשורות
+    }
   }
 
+  // אזור פרטי הקשר הגלויים והחדשים
+  .visible-contact-info {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      padding: 6px 14px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: $gold-primary;
+        background: rgba(212, 175, 55, 0.04);
+        transform: translateY(-1px);
+      }
+
+      .contact-icon {
+        font-size: 0.95rem;
+        opacity: 0.9;
+      }
+
+      .contact-text {
+        font-size: 0.88rem;
+        color: #dddddd;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+      }
+    }
+  }
+
+  // הקונטיינר של תנאי השימוש (נשאר Tooltip)
   .tooltip-container {
     position: relative;
     display: inline-block;
 
     .tooltip-trigger {
-      color: $gold-primary;
+      color: $text-muted;
       cursor: pointer;
       font-size: 0.9rem;
       font-weight: 500;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid transparent;
 
       &:hover {
         color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.03);
       }
     }
 
