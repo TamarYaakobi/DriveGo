@@ -247,96 +247,6 @@
   ],
   "cars": [
     {
-      "id": "1",
-      "categoryId": "3",
-      "companyId": "1",
-      "seats": 5,
-      "description": "מרצדס GLE – רכב SUV יוקרתי עם ביצועים גבוהים, סלון מפואר עם ריפוד עור, מערכת ניווט מתקדמת ומערכות בטיחות חדישות. אידיאלי לנסיעות עסקיות ואירועים.",
-      "year": 2023,
-      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/04/Mercedes-GLE-1-800x531.jpg"
-    },
-    {
-      "id": "2",
-      "categoryId": "3",
-      "companyId": "1",
-      "seats": 5,
-      "description": "מרצדס GLC 300 – קרוסאובר יוקרתי עם מנוע חזק, עיצוב אלגנטי ומערכת מולטימדיה MBUX. מתאים לנהיגה עירונית ובין-עירונית ברמה הגבוהה ביותר.",
-      "year": 2023,
-      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/04/Mercedes-GLC-300-1-800x531.jpg"
-    },
-    {
-      "id": "3",
-      "categoryId": "3",
-      "companyId": "1",
-      "seats": 5,
-      "description": "מרצדס S500 – ליגת העל של רכבי הסדאן. ריפוד עור פרמיום, שקט בנסיעה, מערכת הנעה מתקדמת ורמת נוחות בלתי מתפשרת. הרכב המועדף של אנשי עסקים.",
-      "year": 2022,
-      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/04/Mercedes-S-Class-1-800x531.jpg"
-    },
-    {
-      "id": "4",
-      "categoryId": "3",
-      "companyId": "1",
-      "seats": 5,
-      "description": "מרצדס GLC AMG – גרסת הספורט של ה-GLC עם טיפול AMG, מנוע טורבו, בלמים ספורטיביים ועיצוב אגרסיבי. עוצמה ויוקרה בחבילה אחת.",
-      "year": 2023,
-      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/04/Mercedes-GLC-1-800x531.jpg"
-    },
-    {
-      "id": "5",
-      "categoryId": "3",
-      "companyId": "1",
-      "seats": 7,
-      "description": "מרצדס קלאס V – מינוואן יוקרתי amb 7 מקומות ישיבה פנורמיים. מושלם להסעת משפחות וקבוצות ברמה גבוהה, עם שפע של אביזרים ומערכות בידור.",
-      "year": 2022,
-      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/04/Mercedes-Class-V-1-800x531.jpg"
-    },
-    {
-      "id": "6",
-      "categoryId": "3",
-      "companyId": "2",
-      "seats": 5,
-      "description": "BMW 750 – סדאן ייצוגי עם מנוע 6 ליטר V12, אביזרי יוקרה ברמה הגבוהה ביותר, מערכת ניווט ובידור מתקדמת וביצועים יוצאי דופן על הכביש.",
-      "year": 2022,
-      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/03/BMW-750-1-800x531.jpg"
-    },
-    {
-      "id": "7",
-      "categoryId": "3",
-      "companyId": "2",
-      "seats": 5,
-      "description": "BMW X5 – SUV ספורטיבי עם יכולות שטח ורמת נוחות פרמיום. מנוע דיזל חזק, עיצוב דינמי ומערכות בטיחות חדישות. פופולרי ביותר בקרב משפחות ואנשי עסקים.",
-      "year": 2023,
-      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/03/BMW-X5-1-1-800x531.jpg"
-    },
-    {
-      "id": "8",
-      "categoryId": "3",
-      "companyId": "2",
-      "seats": 5,
-      "description": "BMW X6 – קופה-SUV עם עיצוב ייחודי ואגרסיבי. שילוב בין רכב ספורט לבין SUV יוקרתי, עם ביצועים גבוהים ואביזרים ברמה הגבוהה ביותר.",
-      "year": 2023,
-      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/03/BMW-X6-1-800x531.jpg"
-    },
-    {
-      "id": "9",
-      "categoryId": "3",
-      "companyId": "3",
-      "seats": 5,
-      "description": "אודי A8 – סדאן יוקרתי מהשורה הראשונה עם הנעה quattro, עיצוב פנימי מרהיב, מסכי מגע בסלון ומערכת סאונד Bang & Olufsen. רכב ייצוגי בכל מצב.",
-      "year": 2022,
-      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/03/Audi-A8-1-1-800x531.jpg"
-    },
-    {
-      "id": "10",
-      "categoryId": "3",
-      "companyId": "3",
-      "seats": 7,
-      "description": "אודי Q7 – SUV מרחבי עם 7 מושבים, הנעה quattro ומנוע דיזל חזק. פנים מפואר, מערכות בטיחות מתקדמות ורמת נוחות גבוהה לכל הנוסעים.",
-      "year": 2023,
-      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/03/Audi-Q7-1-1-1-800x531.jpg"
-    },
-    {
       "id": "11",
       "categoryId": "3",
       "companyId": "4",
@@ -668,6 +578,96 @@
       "description": "פולאריס רייזר RZR XP – רכב שטח אטרקטיבי ומטורף לחלוטין. מנוע טורבו חזק, מתלי שטח קיצוניים, פתוח לרווחה ובנוי לכיבוש דיונות ומסלולים מאתגרים.",
       "year": 2023,
       "imageUrl": "https://sharonski.co.il/wp-content/uploads/2026/02/%D7%94%D7%92%D7%A2%D7%94-%D7%A2%D7%9D-%D7%A8%D7%9B%D7%91-%D7%A1%D7%98%D7%99%D7%99%D7%A9%D7%9F-%D7%9C%D7%90%D7%AA%D7%A8-%D7%A1%D7%A7%D7%99-%D7%91%D7%90%D7%95%D7%A1%D7%98%D7%A8%D7%99%D7%94-650x377.png"
+    },
+    {
+      "id": "1",
+      "categoryId": "3",
+      "companyId": "1",
+      "seats": 5,
+      "description": "מרצדס GLE – רכב SUV יוקרתי עם ביצועים גבוהים, סלון מפואר עם ריפוד עור, מערכת ניווט מתקדמת ומערכות בטיחות חדישות. אידיאלי לנסיעות עסקיות ואירועים.",
+      "year": 2023,
+      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/04/Mercedes-GLE-1-800x531.jpg"
+    },
+    {
+      "id": "2",
+      "categoryId": "3",
+      "companyId": "1",
+      "seats": 5,
+      "description": "מרצדס GLC 300 – קרוסאובר יוקרתי עם מנוע חזק, עיצוב אלגנטי ומערכת מולטימדיה MBUX. מתאים לנהיגה עירונית ובין-עירונית ברמה הגבוהה ביותר.",
+      "year": 2023,
+      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/04/Mercedes-GLC-300-1-800x531.jpg"
+    },
+    {
+      "id": "3",
+      "categoryId": "3",
+      "companyId": "1",
+      "seats": 5,
+      "description": "מרצדס S500 – ליגת העל של רכבי הסדאן. ריפוד עור פרמיום, שקט בנסיעה, מערכת הנעה מתקדמת ורמת נוחות בלתי מתפשרת. הרכב המועדף של אנשי עסקים.",
+      "year": 2022,
+      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/04/Mercedes-S-Class-1-800x531.jpg"
+    },
+    {
+      "id": "4",
+      "categoryId": "3",
+      "companyId": "1",
+      "seats": 5,
+      "description": "מרצדס GLC AMG – גרסת הספורט של ה-GLC עם טיפול AMG, מנוע טורבו, בלמים ספורטיביים ועיצוב אגרסיבי. עוצמה ויוקרה בחבילה אחת.",
+      "year": 2023,
+      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/04/Mercedes-GLC-1-800x531.jpg"
+    },
+    {
+      "id": "5",
+      "categoryId": "3",
+      "companyId": "1",
+      "seats": 7,
+      "description": "מרצדס קלאס V – מינוואן יוקרתי amb 7 מקומות ישיבה פנורמיים. מושלם להסעת משפחות וקבוצות ברמה גבוהה, עם שפע של אביזרים ומערכות בידור.",
+      "year": 2022,
+      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/04/Mercedes-Class-V-1-800x531.jpg"
+    },
+    {
+      "id": "6",
+      "categoryId": "3",
+      "companyId": "2",
+      "seats": 5,
+      "description": "BMW 750 – סדאן ייצוגי עם מנוע 6 ליטר V12, אביזרי יוקרה ברמה הגבוהה ביותר, מערכת ניווט ובידור מתקדמת וביצועים יוצאי דופן על הכביש.",
+      "year": 2022,
+      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/03/BMW-750-1-800x531.jpg"
+    },
+    {
+      "id": "7",
+      "categoryId": "3",
+      "companyId": "2",
+      "seats": 5,
+      "description": "BMW X5 – SUV ספורטיבי עם יכולות שטח ורמת נוחות פרמיום. מנוע דיזל חזק, עיצוב דינמי ומערכות בטיחות חדישות. פופולרי ביותר בקרב משפחות ואנשי עסקים.",
+      "year": 2023,
+      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/03/BMW-X5-1-1-800x531.jpg"
+    },
+    {
+      "id": "8",
+      "categoryId": "3",
+      "companyId": "2",
+      "seats": 5,
+      "description": "BMW X6 – קופה-SUV עם עיצוב ייחודי ואגרסיבי. שילוב בין רכב ספורט לבין SUV יוקרתי, עם ביצועים גבוהים ואביזרים ברמה הגבוהה ביותר.",
+      "year": 2023,
+      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/03/BMW-X6-1-800x531.jpg"
+    },
+    {
+      "id": "9",
+      "categoryId": "3",
+      "companyId": "3",
+      "seats": 5,
+      "description": "אודי A8 – סדאן יוקרתי מהשורה הראשונה עם הנעה quattro, עיצוב פנימי מרהיב, מסכי מגע בסלון ומערכת סאונד Bang & Olufsen. רכב ייצוגי בכל מצב.",
+      "year": 2022,
+      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/03/Audi-A8-1-1-800x531.jpg"
+    },
+    {
+      "id": "10",
+      "categoryId": "3",
+      "companyId": "3",
+      "seats": 7,
+      "description": "אודי Q7 – SUV מרחבי עם 7 מושבים, הנעה quattro ומנוע דיזל חזק. פנים מפואר, מערכות בטיחות מתקדמות ורמת נוחות גבוהה לכל הנוסעים.",
+      "year": 2023,
+      "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/03/Audi-Q7-1-1-1-800x531.jpg"
     }
   ],
   "reviews": [
