@@ -148,7 +148,7 @@ const CarDetails: FC<CarDetailsProps> = ({ initialLike }: CarDetailsProps) => {
     <br></br>
     <small> {company} :חברה</small>
     <br></br>
-    <small>קטגוריה: {category} </small>
+    <small>קטגוריה: {category.name} </small>
     <br></br>
     <small> {car.description}</small>
     <br></br>

@@ -31,7 +31,7 @@ const Cars: FC = () => {
       setCategories(responseCategories || [])
 
       const categoryId = urlParams.category
-        ? responseCategories?.find(cat => cat.name === urlParams.category)?.id
+        ? responseCategories?.find(cat => cat.nameInEnglish === urlParams.category)?.id
         : undefined
 
       const response = await carService.getCars(categoryId, page, 20)
@@ -54,7 +54,7 @@ const Cars: FC = () => {
 
   const refreshCars = async () => {
     const categoryId = urlParams.category
-      ? categories?.find(cat => cat.name === urlParams.category)?.id
+      ? categories?.find(cat => cat.nameInEnglish === urlParams.category)?.id
       : undefined
     const response = await carService.getCars(categoryId, 1, page * 20)
     setCars(response || [])
@@ -68,7 +68,7 @@ const Cars: FC = () => {
             key={i.id}
             car={i}
             company={companies?.find(com => com.id === String(i.companyId))?.name}
-            category={categories?.find(cat => cat.id === String(i.categoryId))?.nameInEnglish}
+            category={categories?.find(cat => cat.id === String(i.categoryId))}
             onDelete={refreshCars}
           />
         )}

@@ -7,11 +7,12 @@ import type { User } from '../../models/user.model';
 import carService from '../../services/car.service';
 import { setMessage } from '../../redux/slices/message.slice';
 import { useFavorite } from '../useFavorite/useFavorite';
+import type { Category } from '../../models/category.model';
 
 interface CarCardProps {
   car: Car,
   company?: string,
-  category?: string,
+  category?: Category,
   onDelete?: () => void,
   initialLike?: boolean
 }
@@ -34,8 +35,8 @@ const CarCard: FC<CarCardProps> = ({ car, company, category, onDelete, initialLi
       onDelete?.()
     }
   }
-
-  const safeCategory = (category && category !== 'undefined') ? category : "all";
+const categoryUrlSegment = category?.nameInEnglish || "all";
+  // const safeCategory = (category && category.nameInEnglish !== 'undefined') ? category.nameInEnglish : "all";
   const safeCompany = (company && company !== 'undefined') ? company : "general";
 
   return <div className="CarCard">
@@ -47,9 +48,9 @@ const CarCard: FC<CarCardProps> = ({ car, company, category, onDelete, initialLi
     <br></br>
     <small> {company} :חברה</small>
     <br></br>
-    <small>קטגוריה: {category} </small>
-    <button onClick={() => navigate(`/Cars/${safeCategory}/${car.id}`, {
-      state: { car, company: safeCompany, category: safeCategory }
+    <small>קטגוריה: {category?.name} </small>
+    <button onClick={() => navigate(`/Cars/${categoryUrlSegment}/${car.id}`, {
+  state: { car, company: safeCompany, category }
     })}>מעבר לפרטים</button>
     {user?.isAdmin && (
       <button className="admin-delete-btn" onClick={deleteCar}>
