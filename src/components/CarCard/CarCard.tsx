@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { User } from '../../models/user.model';
 import carService from '../../services/car.service';
 import { setMessage } from '../../redux/slices/message.slice';
-import { deleteFavoriteCar, setFavoriteCar } from '../../redux/slices/favorite.slice';
+import { useFavorite } from '../useFavorite/useFavorite';
 
 interface CarCardProps {
   car: Car,
@@ -20,8 +20,7 @@ const CarCard: FC<CarCardProps> = ({ car, company, category, onDelete, initialLi
   const user = useSelector((state: User) => state.user.user)
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const [like, setLike] = useState(initialLike)
-
+  const { like, toggleLike } = useFavorite(car, initialLike);
 
   const deleteCar = async () => {
     const response = await carService.deleteCar(car.id!);
@@ -36,27 +35,6 @@ const CarCard: FC<CarCardProps> = ({ car, company, category, onDelete, initialLi
     }
   }
 
-  const LikeIt = () => {
-    if (!like) {
-      dispatch(setFavoriteCar(car))
-      dispatch(setMessage(
-        {
-          message: 'הרכב נוסף למועדפים',
-          type: 'sucsses'
-        }
-      ))
-    }
-    else {
-      dispatch(deleteFavoriteCar(car.id))
-      dispatch(setMessage(
-        {
-          message: 'הרכב הוסר מהמועדפים',
-          type: 'sucsses'
-        }
-      ))
-    }
-    setLike(!like)
-  }
   const safeCategory = (category && category !== 'undefined') ? category : "all";
   const safeCompany = (company && company !== 'undefined') ? company : "general";
 
@@ -76,13 +54,13 @@ const CarCard: FC<CarCardProps> = ({ car, company, category, onDelete, initialLi
     {user?.isAdmin && (
       <button className="admin-delete-btn" onClick={deleteCar}>
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+          <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" />
         </svg>
       </button>
     )}
-    <button className={`like-btn ${like ? 'is-liked' : ''}`} onClick={LikeIt}>
+    <button className={`like-btn ${like ? 'is-liked' : ''}`} onClick={toggleLike}>
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 21 5.42 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 21 5.42 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
       </svg>
     </button>
   </div>
