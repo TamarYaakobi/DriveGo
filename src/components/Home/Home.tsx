@@ -63,17 +63,14 @@ const Home: FC<HomeProps> = () => {
         </div>
         <div className="features-grid">
           <div className="feature-card">
-            <div className="feature-icon">💎</div>
             <h4>חווית פרימיום</h4>
             <p>רכבים מוקפדים, נקיים ומתוחזקים ברמה הגבוהה ביותר בשוק.</p>
           </div>
           <div className="feature-card">
-            <div className="feature-icon">⚡</div>
             <h4>זמינות מיידית</h4>
             <p>תהליך הזמנה דיגיטלי ומהיר ללא בירוקרטיה מיותרת.</p>
           </div>
           <div className="feature-card">
-            <div className="feature-icon">🛡️</div>
             <h4>ביטחון מלא</h4>
             <p>כיסוי ביטוחי מקיף ושירות לקוחות אישי הזמין עבורך 24/7.</p>
           </div>
@@ -113,21 +110,25 @@ const Home: FC<HomeProps> = () => {
 
         <div className="footer-bottom-links">
           
-          {/* בלוק פרטי קשר יוקרתי - גלוי ישירות בדף */}
-          <div className="visible-contact-info">
-            <div className="contact-item">
-              <span className="contact-icon">📞</span>
-              <span className="contact-text">050-1234567</span>
-            </div>
-            <div className="contact-item">
-              <span className="contact-icon">📬</span>
-              <span className="contact-text">info@drivego.co.il</span>
-            </div>
-            <div className="contact-item">
-              <span className="contact-icon">📍</span>
-              <span className="contact-text">א׳-ה׳ 09:00 - 18:00</span>
-            </div>
-          </div>
+{/* בלוק פרטי קשר יוקרתי - גלוי ישירות בדף */}
+<div className="visible-contact-info">
+  <div className="contact-item">
+    {/* אייקון טלפון מודרני עם אלמנט האנימציה */}
+    <span className="contact-icon phone-animated">
+      <span className="icon-pulse"></span>
+      📞
+    </span>
+    <span className="contact-text">050-303-5052</span>
+  </div>
+  <div className="contact-item">
+    <span className="contact-icon">✉️</span>
+    <span className="contact-text">info@drivego.co.il</span>
+  </div>
+  <div className="contact-item">
+    <span className="contact-icon">🕒</span>
+    <span className="contact-text">א׳-ה׳ 09:00 - 18:00</span>
+  </div>
+</div>
 
           <span className="link-separator">|</span>
 

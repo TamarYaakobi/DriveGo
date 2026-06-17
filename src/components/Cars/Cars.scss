@@ -1,27 +1,189 @@
 $bg-dark: #0f0f11;
+$bg-card: #1a1a1e;
+$gold-primary: #d4af37;
+$gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+$text-light: #ffffff;
+$text-muted: #aaaaaa;
 
 .Cars-page {
   background-color: $bg-dark;
   min-height: 100vh;
+  padding-top: 130px;
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding-right: 40px;
+  padding-left: 40px;
+  box-sizing: border-box;
+
+  // סרגל הסינונים האופקי
+  .filter-sidebar {
+    width: 100%;
+    max-width: 900px; 
+    display: flex;
+    flex-direction: row; 
+    gap: 20px; 
+    margin-bottom: 25px;
+    align-items: stretch;
+    flex-wrap: wrap; 
+  }
+
+  // מבנה הבלוקים של הסינונים (השנים והמושבים)
+  .year-filter, .seats-filter {
+    flex: 1; 
+    min-width: 280px; 
+    background: rgba($bg-card, 0.7);
+    border: 1px solid rgba($gold-primary, 0.2);
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+   &__slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: calc(100% - 90px);
+      height: 5px;
+      border-radius: 10px;
+      outline: none;
+      position: relative;
+      display: block;
+      margin: 10px auto 0;
+      direction: ltr; /* מאלץ את הסליידר להגיב לאחוזים הפיזיים בצורה ישרת קו */
+
+      // ערך מקסימלי מצד ימין (החלפנו את ה-content כדי להתאים לגרף)
+      &::before {
+        content: attr(max);
+        position: absolute;
+        right: -45px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $gold-primary;
+        font-size: 0.85rem;
+        font-weight: 600;
+        font-family: sans-serif;
+      }
+
+      // ערך מינימלי מצד שמאל
+      &::after {
+        content: attr(min);
+        position: absolute;
+        left: -45px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $text-muted;
+        font-size: 0.85rem;
+        font-weight: 500;
+        font-family: sans-serif;
+      }
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: $gold-gradient;
+        cursor: pointer;
+        border: 2px solid $bg-dark;
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        transition: transform 0.2s ease;
+        &:hover { transform: scale(1.25); }
+      }
+
+      &::-moz-range-thumb {
+        width: 12px;
+        height: 12px;
+        border: none;
+        border-radius: 50%;
+        background: $gold-gradient;
+        cursor: pointer;
+        border: 2px solid $bg-dark;
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        transition: transform 0.2s ease;
+        &:hover { transform: scale(1.25); }
+      }
+    }
+
+    // קפסולת הסטטוס התחתונה מיושרת פיקס למרכז הבר האופקי
+    &__current {
+      width: 100%;
+      flex-basis: 100%; 
+      text-align: center;
+      font-size: 0.95rem;
+      color: $gold-primary;
+      font-weight: 600;
+      background: rgba($gold-primary, 0.08);
+      border: 1px solid rgba($gold-primary, 0.25);
+      padding: 12px 0;
+      border-radius: 8px;
+      margin: 10px 0 0 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      letter-spacing: 0.3px;
+      box-sizing: border-box;
+      animation: fadeIn 0.3s ease-out;
+    }
+  }
+
+  .year-filter::before {
+    content: "סינון לפי שנת ייצור";
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: $text-light;
+    margin-bottom: 12px;
+  }
+
+  .seats-filter::before {
+    content: "סינון לפי מספר מושבים";
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: $text-light;
+    margin-bottom: 12px;
+  }
 }
 
 .Cars {
   background-color: $bg-dark;
-  min-height: 100vh;
-  padding: 120px 40px 60px; 
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 0 60px 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 35px;
-  max-width: 1400px;
-  margin: 0 auto;
   box-sizing: border-box;
   direction: rtl;
 }
 
+
+
+@media (max-width: 900px) {
+  .Cars-page {
+    padding-right: 20px;
+    padding-left: 20px;
+
+    .filter-sidebar {
+      flex-direction: column; 
+      max-width: 100%;
+    }
+  }
+}
+
 @media (max-width: 480px) {
   .Cars {
-    padding: 100px 20px 40px;
     grid-template-columns: 1fr;
     gap: 25px;
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
 }

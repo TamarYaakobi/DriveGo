@@ -76,9 +76,15 @@ const NavBar: FC<NavBarProps> = () => {
 
         <div className='user-profile-area'>
           <div className='user-profile-widget'>
-            <span className='favorites-icon' onClick={() => navigate('/Favorite')} title="מועדפים">
-              ⭐
-            </span>
+            <button
+              className='favorites-btn'
+              onClick={() => navigate('/Favorite')}
+              title="המועדפים שלי"
+              aria-label="מועדפים"
+            >
+              <span className='favorites-icon'>⭐</span>
+              <span className='favorites-text'>מועדפים</span>
+            </button>
             <span className='user-name'>
               {user ? user.firstName : 'אורח'}
             </span>

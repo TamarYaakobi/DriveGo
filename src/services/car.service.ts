@@ -75,4 +75,61 @@ export default new class CarService {
             return false;
         }
     }
+
+    async getYearRange(categoryId?: string): Promise<{ min: number, max: number } | null> {
+        try {
+            let base = `${this.BASE_URL}/cars`
+            if (categoryId) base += `?categoryId=${categoryId}`
+            const sep = categoryId ? '&' : '?'
+
+            const [minRes, maxRes] = await Promise.all([
+                axios.get<Car[]>(`${base}${sep}_sort=year&_order=asc&_limit=1`),
+                axios.get<Car[]>(`${base}${sep}_sort=year&_order=desc&_limit=1`)
+            ])
+
+            return {
+                min: minRes.data[0]?.year,
+                max: maxRes.data[0]?.year
+            }
+        } catch (error) {
+            return null
+        }
+    }
+
+    async getSeatsRange(categoryId?: string): Promise<{ min: number, max: number } | null> {
+        try {
+            let base = `${this.BASE_URL}/cars`
+            if (categoryId) base += `?categoryId=${categoryId}`
+            const sep = categoryId ? '&' : '?'
+
+            const [minRes, maxRes] = await Promise.all([
+                axios.get<Car[]>(`${base}${sep}_sort=seats&_order=asc&_limit=1`),
+                axios.get<Car[]>(`${base}${sep}_sort=seats&_order=desc&_limit=1`)
+            ])
+
+            return {
+                min: minRes.data[0]?.seats,
+                max: maxRes.data[0]?.seats
+            }
+        } catch (error) {
+            return null
+        }
+    }
+
+    async getFilteredCars(categoryId?: string, year?: number, seats?: number): Promise<Car[] | null> {
+        try {
+            let url = `${this.BASE_URL}/cars?`
+            const params: string[] = []
+
+            if (categoryId) params.push(`categoryId=${categoryId}`)
+            if (year) params.push(`year_gte=${year}`)
+            if (seats) params.push(`seats_gte=${seats}`)
+
+            url += params.join('&')
+            return (await axios.get<Car[]>(url)).data;
+        } catch (error) {
+            return null;
+        }
+    }
+
 }

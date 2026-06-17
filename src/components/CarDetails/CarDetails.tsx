@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState, useRef, type FC } from 'react';
 import './CarDetails.scss';
-import type { Car } from '../../models/car.model';
 import type { Review } from '../../models/review.model';
 import carService from '../../services/car.service';
 import type { User } from '../../models/user.model';

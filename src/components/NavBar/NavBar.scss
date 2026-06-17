@@ -16,7 +16,7 @@ $text-muted: #aaaaaa;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 
   .nav-bar {
-    max-width: 100%; 
+    max-width: 100%;
     padding: 12px 60px;
     display: flex;
     align-items: center;
@@ -27,7 +27,7 @@ $text-muted: #aaaaaa;
     cursor: pointer;
     display: flex;
     align-items: center;
-    flex: 1; 
+    flex: 1;
     justify-content: flex-start;
 
     .nav-logo {
@@ -45,13 +45,13 @@ $text-muted: #aaaaaa;
     align-items: center;
     gap: 30px;
     flex: 2;
-    justify-content: center; 
+    justify-content: center;
   }
 
   .nav-link {
     color: $text-light;
-    font-size: 1.05rem; 
-    font-weight: 600; 
+    font-size: 1.05rem;
+    font-weight: 600;
     cursor: pointer;
     position: relative;
     padding: 8px 0;
@@ -87,23 +87,58 @@ $text-muted: #aaaaaa;
   .user-profile-widget {
     display: flex;
     align-items: center;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.04);
-    padding: 8px 18px;
-    border-radius: 25px;
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 6px 14px;
+    border-radius: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.12);
     width: fit-content;
     white-space: nowrap;
 
-    .favorites-icon {
-      cursor: pointer;
-      font-size: 1.2rem;
-      transition: transform 0.2s ease;
+    // כפתור המועדפים החדש והמשודרג
+    .favorites-btn {
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 20px;
+      padding: 6px 12px;
       display: flex;
       align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      color: $text-light;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: inherit;
+      transition: all 0.25s ease-in-out;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 
+      .favorites-icon {
+        font-size: 1rem;
+        transition: transform 0.2s ease;
+      }
+
+      .favorites-text {
+        color: rgba($text-light, 0.9);
+      }
+
+      // אפקט מעבר עכבר - מבהיר את הכפתור, מגדיל קצת את הכוכב ומדגיש את הזהב
       &:hover {
-        transform: scale(1.2);
+        background: rgba(212, 175, 55, 0.18);
+        border-color: $gold-primary;
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+
+        .favorites-icon {
+          transform: scale(1.2) rotate(15deg);
+        }
+
+        .favorites-text {
+          color: $gold-primary;
+        }
+      }
+
+      // אפקט לחיצה פיזית
+      &:active {
+        transform: scale(0.96);
       }
     }
 
@@ -113,6 +148,7 @@ $text-muted: #aaaaaa;
       background: $gold-gradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      padding-left: 4px;
     }
   }
 
