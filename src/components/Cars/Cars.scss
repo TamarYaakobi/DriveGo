@@ -17,7 +17,6 @@ $text-muted: #aaaaaa;
   padding-left: 40px;
   box-sizing: border-box;
 
-  // סרגל הסינונים האופקי
   .filter-sidebar {
     width: 100%;
     max-width: 900px; 
@@ -29,7 +28,6 @@ $text-muted: #aaaaaa;
     flex-wrap: wrap; 
   }
 
-  // מבנה הבלוקים של הסינונים (השנים והמושבים)
   .year-filter, .seats-filter {
     flex: 1; 
     min-width: 280px; 
@@ -54,9 +52,8 @@ $text-muted: #aaaaaa;
       position: relative;
       display: block;
       margin: 10px auto 0;
-      direction: ltr; /* מאלץ את הסליידר להגיב לאחוזים הפיזיים בצורה ישרת קו */
+      direction: ltr; 
 
-      // ערך מקסימלי מצד ימין (החלפנו את ה-content כדי להתאים לגרף)
       &::before {
         content: attr(max);
         position: absolute;
@@ -69,7 +66,6 @@ $text-muted: #aaaaaa;
         font-family: sans-serif;
       }
 
-      // ערך מינימלי מצד שמאל
       &::after {
         content: attr(min);
         position: absolute;
@@ -110,7 +106,6 @@ $text-muted: #aaaaaa;
       }
     }
 
-    // קפסולת הסטטוס התחתונה מיושרת פיקס למרכז הבר האופקי
     &__current {
       width: 100%;
       flex-basis: 100%; 

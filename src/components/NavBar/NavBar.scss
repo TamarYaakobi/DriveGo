@@ -95,7 +95,6 @@ $text-muted: #aaaaaa;
     width: fit-content;
     white-space: nowrap;
 
-    // כפתור המועדפים החדש והמשודרג
     .favorites-btn {
       background: rgba(212, 175, 55, 0.08);
       border: 1px solid rgba(212, 175, 55, 0.3);
@@ -121,7 +120,6 @@ $text-muted: #aaaaaa;
         color: rgba($text-light, 0.9);
       }
 
-      // אפקט מעבר עכבר - מבהיר את הכפתור, מגדיל קצת את הכוכב ומדגיש את הזהב
       &:hover {
         background: rgba(212, 175, 55, 0.18);
         border-color: $gold-primary;
@@ -136,7 +134,6 @@ $text-muted: #aaaaaa;
         }
       }
 
-      // אפקט לחיצה פיזית
       &:active {
         transform: scale(0.96);
       }

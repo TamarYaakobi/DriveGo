@@ -13,7 +13,7 @@ $text-muted: #aaaaaa;
 
   .hero-section {
     position: relative;
-    height: 78vh; 
+    height: 78vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,7 +58,7 @@ $text-muted: #aaaaaa;
         width: 100%;
 
         .hero-main-logo {
-          max-width: 500px; 
+          max-width: 500px;
           width: 100%;
           height: auto;
           object-fit: contain;
@@ -119,7 +119,7 @@ $text-muted: #aaaaaa;
 
   .section-header {
     text-align: center;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 
     h3 {
       font-size: 1.85rem;
@@ -136,7 +136,7 @@ $text-muted: #aaaaaa;
   }
 
   .features-section {
-    padding: 35px 20px 25px 20px; 
+    padding: 35px 20px 25px 20px;
 
     .features-grid {
       display: grid;
@@ -146,7 +146,7 @@ $text-muted: #aaaaaa;
 
     .feature-card {
       background-color: $bg-card;
-      padding: 25px 20px; 
+      padding: 25px 20px;
       border-radius: 12px;
       text-align: center;
       border: 1px solid rgba(255, 255, 255, 0.05);
@@ -177,6 +177,7 @@ $text-muted: #aaaaaa;
       }
     }
   }
+
   .categories-section {
     padding: 30px 20px;
     background-color: rgba(255, 255, 255, 0.01);
@@ -242,7 +243,7 @@ $text-muted: #aaaaaa;
 
   .footer-cta {
     text-align: center;
-    padding: 75px 20px; // צמצום רווחים מ-100px
+    padding: 75px 20px;
     background: linear-gradient(rgba(15, 15, 17, 0.82), rgba(15, 15, 17, 1)),
       url('https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover;
 
@@ -305,7 +306,7 @@ $text-muted: #aaaaaa;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px; // הגדלנו את המרווח בין קבוצות המידע לאיזון
+  gap: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 25px;
   flex-wrap: wrap;
@@ -314,89 +315,91 @@ $text-muted: #aaaaaa;
     color: $text-muted;
     opacity: 0.3;
     font-size: 1.2rem;
-    
+
     @media (max-width: 768px) {
-      display: none; // מסתיר את המפריד במסכים קטנים כדי לאפשר קריסה נקייה לשורות
+      display: none;
+
     }
   }
 
-  // אזור פרטי הקשר הגלויים והחדשים
   .visible-contact-info {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-
-  .contact-item {
     display: flex;
+    gap: 25px;
     align-items: center;
-    gap: 10px;
-    font-size: 1rem;
-    color: #ffffff;
+    justify-content: center;
+    margin-bottom: 15px;
 
-    .contact-icon {
-      font-size: 1.1rem;
-      display: inline-flex;
+    .contact-item {
+      display: flex;
       align-items: center;
-      justify-content: center;
-      position: relative;
-      width: 28px;
-      height: 28px;
-      background: rgba(212, 175, 55, 0.1);
-      border-radius: 50%;
-      border: 1px solid rgba(212, 175, 55, 0.25);
-    }
+      gap: 10px;
+      font-size: 1rem;
+      color: #ffffff;
 
-    // המנגנון של האנימציה היוקרתית לטלפון/וואטסאפ
-    .phone-animated {
-      border-color: #d4af37;
-      background: rgba(212, 175, 55, 0.15);
-      animation: phoneFloat 2.5s ease-in-out infinite;
-
-      .icon-pulse {
-        position: absolute;
-        top: -1px;
-        left: -1px;
-        width: 100%;
-        height: 100%;
-        border: 1px solid #d4af37;
+      .contact-icon {
+        font-size: 1.1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 28px;
+        height: 28px;
+        background: rgba(212, 175, 55, 0.1);
         border-radius: 50%;
-        box-sizing: content-box;
-        opacity: 0;
-        animation: luxuryPulse 2.5s ease-out infinite;
+        border: 1px solid rgba(212, 175, 55, 0.25);
+      }
+
+
+      .phone-animated {
+        border-color: #d4af37;
+        background: rgba(212, 175, 55, 0.15);
+        animation: phoneFloat 2.5s ease-in-out infinite;
+
+        .icon-pulse {
+          position: absolute;
+          top: -1px;
+          left: -1px;
+          width: 100%;
+          height: 100%;
+          border: 1px solid #d4af37;
+          border-radius: 50%;
+          box-sizing: content-box;
+          opacity: 0;
+          animation: luxuryPulse 2.5s ease-out infinite;
+        }
       }
     }
   }
-}
 
-// 1. אנימציית הילה יוקרתית שמתרחבת ונעלמת בעדינות
-@keyframes luxuryPulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: scale(1.4);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1.4);
-    opacity: 0;
-  }
-}
+  @keyframes luxuryPulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
 
-// 2. אנימציית ריחוף עדינה ורכה לאייקון עצמו שלא תהיה קופצנית מדי
-@keyframes phoneFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-3px);
-  }
-}
+    50% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
 
-  // הקונטיינר של תנאי השימוש (נשאר Tooltip)
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+
+  @keyframes phoneFloat {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+
   .tooltip-container {
     position: relative;
     display: inline-block;
@@ -474,6 +477,7 @@ $text-muted: #aaaaaa;
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -481,12 +485,19 @@ $text-muted: #aaaaaa;
 }
 
 @keyframes bounceArrow {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateX(-50%) translateY(0);
   }
+
   40% {
     transform: translateX(-50%) translateY(-8px);
   }
+
   60% {
     transform: translateX(-50%) translateY(-4px);
   }

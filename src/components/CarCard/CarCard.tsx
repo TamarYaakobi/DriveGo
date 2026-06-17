@@ -36,7 +36,6 @@ const CarCard: FC<CarCardProps> = ({ car, company, category, onDelete, initialLi
     }
   }
   const categoryUrlSegment = category?.nameInEnglish || "all";
-  // const safeCategory = (category && category.nameInEnglish !== 'undefined') ? category.nameInEnglish : "all";
   const safeCompany = (company && company !== 'undefined') ? company : "general";
 
   return <div className="CarCard" onClick={() => navigate(`/Cars/${categoryUrlSegment}/${car.id}`, {

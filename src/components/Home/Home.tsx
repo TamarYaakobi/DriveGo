@@ -109,26 +109,24 @@ const Home: FC<HomeProps> = () => {
         </div>
 
         <div className="footer-bottom-links">
-          
-{/* בלוק פרטי קשר יוקרתי - גלוי ישירות בדף */}
-<div className="visible-contact-info">
-  <div className="contact-item">
-    {/* אייקון טלפון מודרני עם אלמנט האנימציה */}
-    <span className="contact-icon phone-animated">
-      <span className="icon-pulse"></span>
-      📞
-    </span>
-    <span className="contact-text">050-303-5052</span>
-  </div>
-  <div className="contact-item">
-    <span className="contact-icon">✉️</span>
-    <span className="contact-text">info@drivego.co.il</span>
-  </div>
-  <div className="contact-item">
-    <span className="contact-icon">🕒</span>
-    <span className="contact-text">א׳-ה׳ 09:00 - 18:00</span>
-  </div>
-</div>
+
+          <div className="visible-contact-info">
+            <div className="contact-item">
+              <span className="contact-icon phone-animated">
+                <span className="icon-pulse"></span>
+                📞
+              </span>
+              <span className="contact-text">050-303-5052</span>
+            </div>
+            <div className="contact-item">
+              <span className="contact-icon">✉️</span>
+              <span className="contact-text">info@drivego.co.il</span>
+            </div>
+            <div className="contact-item">
+              <span className="contact-icon">🕒</span>
+              <span className="contact-text">א׳-ה׳ 09:00 - 18:00</span>
+            </div>
+          </div>
 
           <span className="link-separator">|</span>
 
