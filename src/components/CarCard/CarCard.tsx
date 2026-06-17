@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { User } from '../../models/user.model';
 import carService from '../../services/car.service';
 import { setMessage } from '../../redux/slices/message.slice';
-import { useFavorite } from '../useFavorite/useFavorite';
+import { useFavorite } from '../../hooks/useFavorite/useFavorite';
 import type { Category } from '../../models/category.model';
 
 interface CarCardProps {

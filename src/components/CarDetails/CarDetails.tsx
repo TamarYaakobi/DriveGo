@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as yup from 'yup'
 import { useFormik } from 'formik';
 import { setMessage } from '../../redux/slices/message.slice';
-import { useFavorite } from '../useFavorite/useFavorite';
+import { useFavorite } from '../../hooks/useFavorite/useFavorite';
 
 interface StarRatingProps {
   rating: number;
