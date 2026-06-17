@@ -41,7 +41,7 @@ const NavBar: FC<NavBarProps> = () => {
               <ul className='dropdown'>
                 <li onClick={() => navigate('/Cars')}>כל המכוניות</li>
                 {categories && categories.map(cat => (
-                  <li key={cat.id} onClick={() => navigate(`/Cars/${cat.name}`)}>
+                  <li key={cat.id} onClick={() => navigate(`/Cars/${cat.nameInEnglish}`)}>
                     {cat.name}
                   </li>
                 ))}

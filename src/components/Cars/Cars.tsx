@@ -68,7 +68,7 @@ const Cars: FC = () => {
             key={i.id}
             car={i}
             company={companies?.find(com => com.id === String(i.companyId))?.name}
-            category={categories?.find(cat => cat.id === String(i.categoryId))?.name}
+            category={categories?.find(cat => cat.id === String(i.categoryId))?.nameInEnglish}
             onDelete={refreshCars}
           />
         )}
