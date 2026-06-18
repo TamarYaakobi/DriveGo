@@ -168,7 +168,7 @@ const CarDetails: FC<CarDetailsProps> = ({ initialLike }: CarDetailsProps) => {
     {reviews.map((i) =>
       <div key={i.id}>
         <br></br>
-        <small></small>
+        {/* <small></small> */}
         <div className="rating">
           <span className="rating__stars"></span>
           <div className="rating__number">

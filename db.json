@@ -100,7 +100,7 @@
       "id": "Uiw9LYFpo9M"
     },
     {
-      "firstName": "תמי",
+      "firstName": "תמר",
       "lastName": "יעקבי",
       "idNumber": "216234807",
       "email": "t3232853@gmail.com",
@@ -129,7 +129,7 @@
     {
       "firstName": "רחל",
       "lastName": "לוי",
-      "idNumber": "222222222",
+      "idNumber": "222222777",
       "email": "853@gmail.com",
       "password": "רחללוי111",
       "isAdmin": false,
@@ -152,6 +152,15 @@
       "password": "123456789",
       "isAdmin": false,
       "id": "1pv5HsK"
+    },
+    {
+      "firstName": "shany",
+      "lastName": "cohen",
+      "idNumber": "318410172",
+      "email": "shany6881@gmail.com",
+      "password": "12345678",
+      "isAdmin": false,
+      "id": "gDLl27e"
     }
   ],
   "categories": [
@@ -668,6 +677,15 @@
       "description": "אודי Q7 – SUV מרחבי עם 7 מושבים, הנעה quattro ומנוע דיזל חזק. פנים מפואר, מערכות בטיחות מתקדמות ורמת נוחות גבוהה לכל הנוסעים.",
       "year": 2023,
       "imageUrl": "https://www.diamondcar.co.il/wp-content/uploads/2023/03/Audi-Q7-1-1-1-800x531.jpg"
+    },
+    {
+      "categoryId": "2",
+      "companyId": "1",
+      "seats": 5,
+      "description": "יפה מאוד וחצתיך",
+      "year": 2025,
+      "imageUrl": "https://www.luxurycarrental.co.il/upload/%D7%90%D7%A1%D7%A4%D7%A0%D7%95%D7%AA%20%D7%9C%D7%97%D7%AA%D7%95%D7%A0%D7%94/%D7%9E%D7%97%D7%99%D7%A8%D7%99%20%D7%A8%D7%9B%D7%91%D7%99%20%D7%90%D7%A1%D7%A4%D7%A0%D7%95%D7%AA.jpeg",
+      "id": "9L9EoF_"
     }
   ],
   "reviews": [
@@ -859,6 +877,27 @@
       "userId": "3",
       "description": "הריינג' רובר ווג מפנק ברמות הגבוהות ביותר שיש. שירות ויאיפי.",
       "rating": 5
+    },
+    {
+      "carId": "11",
+      "userId": "wVOsA0WHS9A",
+      "description": "וואו ",
+      "rating": 1,
+      "id": "cA9px3o"
+    },
+    {
+      "carId": "42",
+      "userId": "wVOsA0WHS9A",
+      "description": "vbvvbv",
+      "rating": 1.2,
+      "id": "t9MFm01"
+    },
+    {
+      "carId": "18",
+      "userId": "gDLl27e",
+      "description": "מושלם יפה מאודדד",
+      "rating": 5,
+      "id": "6DgcJQE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

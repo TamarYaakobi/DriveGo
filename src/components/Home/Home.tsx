@@ -11,16 +11,19 @@ const Home: FC<HomeProps> = () => {
     {
       id: '1',
       name: 'רכב אטרקציות',
+      nameInEnglish: "AttractionVehicles",
       img: 'https://www.asfir.co.il/cdn/shop/articles/front-bar-547006-_1__optimized.jpg?v=1771413066'
     },
     {
       id: '2',
       name: 'רכבי אספנות',
+      nameInEnglish: "CollectorVehicles",
       img: 'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     {
       id: '3',
       name: 'רכבי יוקרה',
+      nameInEnglish: "luxuryVehicles",
       img: 'https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
   ];
@@ -87,7 +90,7 @@ const Home: FC<HomeProps> = () => {
             <div
               key={cat.id}
               className="category-card"
-              onClick={() => navigate(`/Cars/${cat.name}`)}
+              onClick={() => navigate(`/Cars/${cat.nameInEnglish}`)}
               style={{ backgroundImage: `url(${cat.img})` }}
             >
               <div className="category-overlay">
@@ -130,7 +133,6 @@ const Home: FC<HomeProps> = () => {
 
           <span className="link-separator">|</span>
 
-          {/* תנאי שימוש - נשאר בתוך Tooltip אלגנטי */}
           <div className="tooltip-container">
             <span className="tooltip-trigger">📜 תנאי שימוש</span>
             <div className="custom-tooltip wide-tooltip">
